@@ -33,7 +33,7 @@ export default async function HomePage() {
         </div>
       ) : (
         <Link
-          href="/api/auth/signin/keycloak"
+          href="/login"
           className="inline-flex w-fit rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800"
         >
           Sign in with Keycloak

@@ -4,7 +4,7 @@
       "command": "npx",
       "args": ["-y", "@playwright/mcp@latest"]
     },
-    "postgres-sms-db": {
+    "postgres-app-db": {
       "command": "npx",
       "args": [
         "-y",
@@ -24,6 +24,10 @@
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-filesystem", "."],
       "cwd": "${workspaceFolder}"
+    },
+    "docker": {
+      "command": "docker",
+      "args": ["mcp", "gateway", "run"]
     }
   }
 }

@@ -27,6 +27,17 @@ just do-it
 - Realms: loaded from `keycloak/` (i.e test-auth config)
 - See for more details: `docker-compose.yml`
 
+Sign-in credentials are entered on the hosted Keycloak login page. Use `http://localhost:3000/login` (or `/api/auth/signin/keycloak`) to start auth; `/api/auth/signin` is a provider-selection endpoint.
+
+If you change Keycloak realm auth-flow settings in `keycloak/app-realm.json`, reset the Keycloak DB volume so import changes are applied on next start:
+
+```sh
+docker compose down -v
+just db-up
+```
+
+`just do-it` now waits for Keycloak's OIDC discovery endpoint before starting Next.js, which avoids transient OAuth startup failures.
+
 ## Commands
 
 Prefer `just` over raw `yarn` when a recipe exists.

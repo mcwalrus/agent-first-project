@@ -5,7 +5,7 @@
 services:
   db:
     image: postgres:16-alpine
-    container_name: sms-db
+    container_name: app-db
     restart: unless-stopped
     environment:
       POSTGRES_USER: user
@@ -43,7 +43,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.migrate
-    container_name: sms-migrate
+    container_name: app-migrate
     restart: on-failure
     environment:
       DATABASE_URL: postgresql://user:password@db:5432/app_db
@@ -78,6 +78,16 @@ services:
       KC_SMTP_FROM: ${KC_SMTP_FROM:-noreply@example.com}
     ports:
       - "8080:8080"
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "exec 3<>/dev/tcp/127.0.0.1/8080 && printf 'GET /realms/app/.well-known/openid-configuration HTTP/1.1\\r\\nHost: localhost\\r\\nConnection: close\\r\\n\\r\\n' >&3 && grep -q '200 OK' <&3",
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 15s
     volumes:
       - ./keycloak/app-realm.json:/opt/keycloak/data/import/app-realm.json:ro
     depends_on:

@@ -1,5 +1,5 @@
 {
-  "realm": "sms",
+  "realm": "app",
   "enabled": true,
   "sslRequired": "none",
   "registrationAllowed": false,
@@ -7,7 +7,40 @@
   "duplicateEmailsAllowed": false,
   "resetPasswordAllowed": false,
   "editUsernameAllowed": false,
+  "browserFlow": "browser-with-password",
   "bruteForceProtected": false,
+  "authenticationFlows": [
+    {
+      "alias": "browser-with-password",
+      "description": "Browser flow with username/email and password form login",
+      "providerId": "basic-flow",
+      "topLevel": true,
+      "builtIn": false,
+      "authenticationExecutions": [
+        {
+          "authenticator": "auth-cookie",
+          "requirement": "ALTERNATIVE",
+          "priority": 10,
+          "userSetupAllowed": false,
+          "authenticatorFlow": false
+        },
+        {
+          "authenticator": "identity-provider-redirector",
+          "requirement": "ALTERNATIVE",
+          "priority": 20,
+          "userSetupAllowed": false,
+          "authenticatorFlow": false
+        },
+        {
+          "authenticator": "auth-username-password-form",
+          "requirement": "REQUIRED",
+          "priority": 30,
+          "userSetupAllowed": false,
+          "authenticatorFlow": false
+        }
+      ]
+    }
+  ],
   "smtpServer": {
     "host": "smtp.resend.com",
     "port": "587",
@@ -30,12 +63,12 @@
   },
   "clients": [
     {
-      "clientId": "sms-web",
-      "name": "sms-web",
-      "description": "SMS Web Application (Authorization Code Flow)",
+      "clientId": "app-web",
+      "name": "app-web",
+      "description": "app Web Application (Authorization Code Flow)",
       "enabled": true,
       "clientAuthenticatorType": "client-secret",
-      "secret": "sms-web-dev-secret",
+      "secret": "app-web-dev-secret",
       "redirectUris": ["http://localhost:3000/*", "http://localhost:3000"],
       "webOrigins": ["http://localhost:3000"],
       "standardFlowEnabled": true,
@@ -81,12 +114,12 @@
       ]
     },
     {
-      "clientId": "sms-admin",
-      "name": "sms-admin",
-      "description": "SMS Admin Service Account \u2014 used by the app to call Keycloak Admin REST API",
+      "clientId": "app-admin",
+      "name": "app-admin",
+      "description": "app Admin Service Account \u2014 used by the app to call Keycloak Admin REST API",
       "enabled": true,
       "clientAuthenticatorType": "client-secret",
-      "secret": "sms-admin-dev-secret",
+      "secret": "app-admin-dev-secret",
       "standardFlowEnabled": false,
       "implicitFlowEnabled": false,
       "directAccessGrantsEnabled": false,
@@ -125,9 +158,9 @@
       "groups": ["/test-org"]
     },
     {
-      "username": "service-account-sms-admin",
+      "username": "service-account-app-admin",
       "enabled": true,
-      "serviceAccountClientId": "sms-admin",
+      "serviceAccountClientId": "app-admin",
       "clientRoles": {
         "realm-management": ["manage-users", "view-users", "manage-realm"]
       }
