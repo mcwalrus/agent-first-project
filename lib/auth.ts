@@ -9,25 +9,6 @@ export const authOptions: NextAuthOptions = {
       issuer: process.env.KEYCLOAK_ISSUER!,
     }),
   ],
-  callbacks: {
-    async jwt({ token, account, profile }) {
-      if (account?.access_token) {
-        token.accessToken = account.access_token;
-      }
-      if (profile && typeof profile === "object" && "role" in profile) {
-        const role = (profile as { role?: unknown }).role;
-        if (typeof role === "string") token.role = role;
-      }
-      return token;
-    },
-    async session({ session, token }) {
-      if (session.user) {
-        session.user.role = typeof token.role === "string" ? token.role : undefined;
-      }
-      session.accessToken = typeof token.accessToken === "string" ? token.accessToken : undefined;
-      return session;
-    },
-  },
   pages: {
     signIn: "/login",
   },

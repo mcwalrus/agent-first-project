@@ -20,9 +20,6 @@ export default async function HomePage() {
           <p className="text-sm text-slate-800">
             Signed in as{" "}
             <span className="font-medium">{session.user.email ?? session.user.name}</span>
-            {session.user.role ? (
-              <span className="text-slate-500"> · role {session.user.role}</span>
-            ) : null}
           </p>
           <Link
             href="/api/auth/signout"

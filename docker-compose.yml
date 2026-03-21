@@ -51,17 +51,6 @@ services:
       db:
         condition: service_healthy
 
-  mailpit:
-    image: axllent/mailpit
-    container_name: mailpit
-    restart: unless-stopped
-    environment:
-      MP_SMTP_AUTH_ACCEPT_ANY: 1
-      MP_SMTP_AUTH_ALLOW_INSECURE: 1
-    ports:
-      - "8025:8025"
-      - "1025:1025"
-
   keycloak:
     image: quay.io/keycloak/keycloak:26.5
     container_name: keycloak
@@ -74,8 +63,6 @@ services:
       KC_DB_PASSWORD: ${KC_DB_PASSWORD:-keycloak}
       KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN:-admin}
       KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD:-admin}
-      KC_SMTP_PASSWORD: ${KC_SMTP_PASSWORD:-}
-      KC_SMTP_FROM: ${KC_SMTP_FROM:-noreply@example.com}
     ports:
       - "8080:8080"
     healthcheck:

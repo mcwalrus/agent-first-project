@@ -41,26 +41,6 @@
       ]
     }
   ],
-  "smtpServer": {
-    "host": "smtp.resend.com",
-    "port": "587",
-    "from": "${KC_SMTP_FROM}",
-    "fromDisplayName": "Test org",
-    "ssl": "false",
-    "starttls": "true",
-    "auth": "true",
-    "user": "resend",
-    "password": "${KC_SMTP_PASSWORD}"
-  },
-  "roles": {
-    "realm": [
-      {
-        "name": "USER",
-        "description": "Standard user for local testing"
-      }
-    ],
-    "client": {}
-  },
   "clients": [
     {
       "clientId": "app-web",
@@ -83,60 +63,7 @@
         "backchannel.logout.revoke.offline.tokens": "false",
         "post.logout.redirect.uris": "http://localhost:3000/login"
       },
-      "protocolMappers": [
-        {
-          "name": "role",
-          "protocol": "openid-connect",
-          "protocolMapper": "oidc-usermodel-realm-role-mapper",
-          "consentRequired": false,
-          "config": {
-            "multivalued": "false",
-            "userinfo.token.claim": "true",
-            "id.token.claim": "true",
-            "access.token.claim": "true",
-            "claim.name": "role",
-            "jsonType.label": "String"
-          }
-        },
-        {
-          "name": "groups",
-          "protocol": "openid-connect",
-          "protocolMapper": "oidc-group-membership-mapper",
-          "consentRequired": false,
-          "config": {
-            "full.path": "false",
-            "id.token.claim": "true",
-            "access.token.claim": "false",
-            "claim.name": "groups",
-            "multivalued": "true"
-          }
-        }
-      ]
-    },
-    {
-      "clientId": "app-admin",
-      "name": "app-admin",
-      "description": "app Admin Service Account \u2014 used by the app to call Keycloak Admin REST API",
-      "enabled": true,
-      "clientAuthenticatorType": "client-secret",
-      "secret": "app-admin-dev-secret",
-      "standardFlowEnabled": false,
-      "implicitFlowEnabled": false,
-      "directAccessGrantsEnabled": false,
-      "serviceAccountsEnabled": true,
-      "publicClient": false,
-      "protocol": "openid-connect",
-      "attributes": {}
-    }
-  ],
-  "groups": [
-    {
-      "name": "test-org",
-      "path": "/test-org",
-      "attributes": {},
-      "realmRoles": [],
-      "clientRoles": {},
-      "subGroups": []
+      "protocolMappers": []
     }
   ],
   "users": [
@@ -153,17 +80,7 @@
           "value": "Test1234!",
           "temporary": false
         }
-      ],
-      "realmRoles": ["USER"],
-      "groups": ["/test-org"]
-    },
-    {
-      "username": "service-account-app-admin",
-      "enabled": true,
-      "serviceAccountClientId": "app-admin",
-      "clientRoles": {
-        "realm-management": ["manage-users", "view-users", "manage-realm"]
-      }
+      ]
     }
   ]
 }
