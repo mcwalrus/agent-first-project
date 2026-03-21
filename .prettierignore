@@ -1,0 +1,10 @@
+.next/
+.beads/
+node_modules/
+dist/
+build/
+public/
+*.lock
+package-lock.json
+prd.json
+prisma/migrations/

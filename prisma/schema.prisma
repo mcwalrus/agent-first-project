@@ -1,0 +1,17 @@
+// Skeleton schema — extend with real models as the product grows.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// Optional key/value store for bootstrap metadata (e.g. seed markers).
+model AppMeta {
+  id    String @id @default(cuid())
+  key   String @unique
+  value String
+}

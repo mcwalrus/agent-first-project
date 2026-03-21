@@ -1,0 +1,107 @@
+#!/usr/bin/env sh
+
+# ---------------------------------------------------------------------------
+# Pre-commit hook
+#
+# Skip flags (set as env vars before your git commit command):
+#   FORCE=1            — skip all checks entirely
+#   SKIP_DB_CHECK=1    — skip local database connectivity check
+#   SKIP_FORMAT=1      — skip Prettier formatting
+#   SKIP_LINT=1        — skip ESLint
+#   SKIP_TYPECHECK=1   — skip TypeScript type-checking
+#   SKIP_TESTS=1       — skip Jest test suite
+#   SKIP_E2E=1         — skip Playwright E2E tests
+#
+# Or bypass all hooks at once with the built-in git flag:
+#   git commit --no-verify
+# ---------------------------------------------------------------------------
+
+if [ "$FORCE" = "1" ]; then
+  echo "⚡ FORCE=1 — skipping all pre-commit checks"
+  exit 0
+fi
+
+# Local database check (skipped when CI, SKIP_DB_CHECK=1, or DATABASE_URL unset)
+if [ -z "$SKIP_DB_CHECK" ] && [ -z "$CI" ]; then
+  [ -f .env ] && set -a && . ./.env && set +a
+  if [ -z "$DATABASE_URL" ]; then
+    echo "⏭  No DATABASE_URL — skipping database check (copy .env.example to .env and run: just db-up to enable)"
+  else
+    echo "🗄️  Checking local database is set up…"
+    if ! echo "SELECT 1" | yarn prisma db execute --stdin 2>/dev/null; then
+      echo "❌ Cannot connect to database. Is it running? (e.g. run: just db-up)"
+      exit 1
+    fi
+    echo "🗄️  Database OK"
+  fi
+elif [ -n "$SKIP_DB_CHECK" ]; then
+  echo "⏭  SKIP_DB_CHECK=1 — skipping database check"
+fi
+
+LINT_STAGED_FLAGS=""
+
+if [ -z "$SKIP_FORMAT" ] && [ -z "$SKIP_LINT" ]; then
+  # Normal path — delegate everything to lint-staged
+  echo "🔍 Running lint-staged (format + lint)…"
+  yarn lint-staged || exit 1
+else
+  # Partial path — run only what isn't skipped
+  STAGED=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.(ts|tsx|js|jsx|mjs|cjs)$' || true)
+  STAGED_ALL=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.(ts|tsx|js|jsx|mjs|cjs|json|md|css)$' || true)
+
+  if [ -z "$SKIP_FORMAT" ]; then
+    if [ -n "$STAGED_ALL" ]; then
+      echo "✏️  Running Prettier…"
+      echo "$STAGED_ALL" | xargs yarn prettier --write || exit 1
+      echo "$STAGED_ALL" | xargs git add
+    fi
+  else
+    echo "⏭  SKIP_FORMAT=1 — skipping Prettier"
+  fi
+
+  if [ -z "$SKIP_LINT" ]; then
+    if [ -n "$STAGED" ]; then
+      echo "🧹 Running ESLint…"
+      echo "$STAGED" | xargs yarn eslint --fix --max-warnings=0 || exit 1
+      echo "$STAGED" | xargs git add
+    fi
+  else
+    echo "⏭  SKIP_LINT=1 — skipping ESLint"
+  fi
+fi
+
+# TypeScript type-check (whole project, not just staged files)
+if [ -z "$SKIP_TYPECHECK" ]; then
+  echo "🔎 Running TypeScript type-check…"
+  yarn tsc --noEmit || exit 1
+else
+  echo "⏭  SKIP_TYPECHECK=1 — skipping TypeScript type-check"
+fi
+
+# Jest tests
+if [ -z "$SKIP_TESTS" ]; then
+  echo "🧪 Running Jest tests…"
+  yarn jest --passWithNoTests || exit 1
+else
+  echo "⏭  SKIP_TESTS=1 — skipping Jest tests"
+fi
+
+# Playwright E2E tests (all commits)
+if [ -z "$SKIP_E2E" ]; then
+  echo "🎭 Running Playwright E2E tests…"
+
+  # Check dev server is running
+  if ! curl -s --max-time 2 http://localhost:3000 > /dev/null 2>&1; then
+    echo "ERROR: Dev server not running on http://localhost:3000."
+    echo "Start it with \`yarn dev\` or \`just dev\` before committing."
+    exit 1
+  fi
+
+  yarn playwright || exit 1
+  echo "✅ Playwright E2E tests passed"
+else
+  echo "⏭  SKIP_E2E=1 — skipping Playwright E2E tests"
+fi
+
+echo "✅ Pre-commit checks passed"
+

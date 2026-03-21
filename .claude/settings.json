@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__postgres-sms-db__query",
+      "mcp__postgres-keycloak-db__query",
+      "mcp__filesystem__read_file",
+      "mcp__filesystem__read_multiple_files",
+      "mcp__filesystem__list_directory",
+      "mcp__filesystem__directory_tree",
+      "mcp__filesystem__search_files",
+      "mcp__filesystem__get_file_info",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_screenshot",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_type",
+      "mcp__playwright__browser_snapshot"
+    ]
+  }
+}
