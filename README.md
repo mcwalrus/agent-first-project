@@ -51,7 +51,6 @@ _Please read through these documents:_
 - ### [Introduction](./docs/INTRO.md) (MUST)
 - ### [Tech Stacks For Agents](./docs/TECH_STACK.md)
 - ### [Understanding Your Backpressure](./docs/BACKPRESSURE.md)
-- ### [Everything Is A Loop Now](./docs/AGENT_LOOP.md)
 
 Once you undertand these concepts you will be ready to jump into the development process.
 
@@ -100,4 +99,9 @@ The `choo-choo-ralph` implementation is a combination of _beads_ (`bd`) and the 
 
 ## Conclusion
 
-I have summarised my thoughts here: [Final Thoughts](./docs/FINAL.md).
+I have summarised my thoughts here:
+
+- ### [Everything Is A Loop Now](./docs/AGENT_LOOP.md)
+- ### [Final Thoughts](./docs/FINAL.md)
+
+Reach out to me after you have gone through this tutorial.

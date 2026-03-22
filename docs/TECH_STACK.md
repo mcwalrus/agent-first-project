@@ -1,6 +1,6 @@
 # Tech Stacks For Agents
 
-Reasons in explaining the current technology stack chosen.
+Reasons in explaining the current technology stack chosen for this tutorial.
 
 ## Using Agents
 
@@ -23,17 +23,7 @@ Model Context Protocol, or MCP is an integration technique that allows AI models
 
 ## MCP Services
 
-For the project, I have defined configurations for `playwright`, `postgres`, `filesystem`, `docker` MCP servers. All of these rely on the dev server to be while agents are at work. If new technologies are introduced, it is appropriate to view whether they include their own MCP integrations. Services like `mailpit` can expose API interfaces - http REST, REPL or alike - which agents can query directly when testing related service tasks. In the case of mailpit, end-to-end itegration tests can be configured.
-
-## MCP Rationales
-
-- `playwright` — Lets agents drive a real browser to test UI flows end-to-end.
-- `postgres-app-db` — Gives agents direct access and updates to your application's database.
-- `postgres-keycloak-db` — Gives agents access into the identity / auth database specifically.
-- `docker` — Lets agents interact with start/stop services, inspect logs, check container state.
-- `filesystem` — A suggested means for agents to read and edit files within your workspace.
-
-Note, agents aren't run in [chroot](https://en.wikipedia.org/wiki/Chroot) mode, so they may interact with any files in the internal file-system outside the workspace directory.
+For the project, I have defined configurations for `playwright`, `postgres`, `filesystem`, `docker` MCP servers. All of these rely on the dev server to be while agents are at work. If new technologies are introduced, it is appropriate to view whether they include their own MCP integrations. Services like `mailpit` can expose API interfaces which agents can query directly when testing related service tasks. In the case of mailpit, end-to-end itegration tests can be configured.
 
 ## Other Tools
 
