@@ -10,7 +10,7 @@ Take Simon Willison, a leading SFO software engineer and leading AI research com
 
 > “Becoming a professional software engineer is hard. Getting good enough for people to pay you money to write software takes years of dedicated work. The rewards are significant: this is a well compensated career which opens up a lot of great opportunities … The idea that this could all be stripped away by a chatbot is deeply upsetting.”
 
-If you are not in the position where relate to the industry leading experts, then you have some catching up to do.
+If you are not in the position where relate to the industry leading experts, then you have some catching up to do. I will cover the concept of using the 'ralph-wiggum' technique i.e placing agents in loops, as well as developing software through autonomous agent harnesses. These techniques are possible today due to recent developments in broader software ecosystem, as opposed where AI is at by itself.
 
 ## Motivation
 

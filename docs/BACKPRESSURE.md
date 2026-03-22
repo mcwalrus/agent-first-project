@@ -4,13 +4,17 @@ A MUST read article: [https://banay.me/dont-waste-your-backpressure](https://ban
 
 ## Core Insights
 
-2. **Give agents shell and build access**
+Peronal key insights:
+
+1. **Give agents shell and build access**
 1. **Use languages with expressive type systems**
 1. **Attach inspection tools via MCP**
 1. **Auto-generate documentation from schemas**
 1. **Use AI assistants code reviews or non-engineering tasks**
 
 ## Core Principles
+
+Summarised by Claude:
 
 1. **Automate agent feedback**
    DO NOT make a habit for providing feedback yourself. The worst use of your time is manually telling an agent it missed an import or broke a layout. Any feedback that can be automated should be. Your job is to handle only what machines can't judge.

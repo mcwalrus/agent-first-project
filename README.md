@@ -1,6 +1,6 @@
 # Automotous Agent-First Software Development Tutorial
 
-This tutorial is aimed to bring anyone up to speed with the principles of working with coding agents, the 'ralph-wiggum' technique i.e placing agents into loops, and creating software with agents through autonomous agent harnesses. These techniques are possible due to recent developments of AI and the broader software ecosystem. Let's dive into these techniques once we understand how to navigate the repository.
+This tutorial is aimed to bring anyone up to speed with the principles of working with coding agents to build software autonomously for you.
 
 ## Prerequisites
 
@@ -48,11 +48,11 @@ I prefer `just` over `make` when it comes to repo commands.
 
 _Please read through these documents:_
 
-- ### [Introduction](./docs/INTRO.md) (MUST)
+- ### [Introduction](./docs/INTRO.md)
 - ### [Tech Stacks For Agents](./docs/TECH_STACK.md)
 - ### [Understanding Your Backpressure](./docs/BACKPRESSURE.md)
 
-Once you undertand these concepts you will be ready to jump into the development process.
+Once you have read these, you are good to start.
 
 ## App Navigation
 
