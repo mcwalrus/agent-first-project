@@ -23,7 +23,7 @@ just do-it
 
 ## Commands
 
-Prefer `just` over raw `make`, `yarn` + `npm` when it comes to commands.
+I prefer `just` over `make` when it comes to repo commands.
 
 | Goal                            | Command                |
 | ------------------------------- | ---------------------- |
