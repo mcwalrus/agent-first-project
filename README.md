@@ -90,8 +90,14 @@ First off, you will want to [Setup Claude Code](./docs/CLAUDE_SETUP.md). Please 
 
 The `snarktank/ralph` implementation provides a minimal approach from planning and building from a Product Requirements Document (PRD), ticking off developed user stories as it goes. This is a good choice for those getting to into it to grasp with the fundementials of ralph. It's a bit tedious and manually involved to use as it's downside.
 
+### [github.com/steveyegge/beads](https://github.com/steveyegge/beads)
+
+Beads (`bd`) is a distributed + git-backed graph issue tracker designed specifically built first-class for AI coding agents. It provides agents with a persistent and structured memory system that replaces messy markdown plans with a dependency-aware graph, allowing many agents to handle long tasks without losing context over time. I have generated an overview from claude: [Beads Tutorial HTML](./docs/index.html) (you may need to drag this file into your browser to view).
+
 ### [github.com/mj-meyer/choo-choo-ralph](https://github.com/mj-meyer/choo-choo-ralph)
 
-The `choo-choo-ralph` implementation is a more structured approach which uses _beads_ (`bd`) as a persistent memory model and task board for agents. It's a bit more thorough in it's approach, and will cost somewhat more than the former depending on it's scope of work. Although this approach works well, it is still manually involved during the spec and pour stages of planning. Ideally you can be more prompt, notification driven on architecture.
+The `choo-choo-ralph` implementation is a combination of _beads_ (`bd`) and the ralph loop in one. It's a bit more thorough in it's approach, and will cost somewhat more than the former depending on it's scope of work. This approach works well, it is still manually involved during the spec and pour stages of planning. Ideally you can be more prompt, notification driven on architecture. Minimal REPL loops, that is read-eval-print may tend to do a better job than heavier frameworks such as this.
 
-Please reach out once you have gone through the course as I want to know where people are at.
+## Conclusion
+
+I have summarised my thoughts here: [Final Thoughts](./docs/FINAL.md).
