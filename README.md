@@ -1,6 +1,6 @@
-# Software Development, AI-First Tutorial
+# Automotous AI Software Development Tutorial
 
-This tutorial is aimed to bring anyone up to speed with the principles of working with coding agents, the 'ralph-wiggum' technique i.e placing agents into loops, and creating software with agents through autonomous harnesses. These techniques are possible due to recent developments of AI and the broader software ecosystem.
+This tutorial is aimed to bring anyone up to speed with the principles of working with coding agents, the 'ralph-wiggum' technique i.e placing agents into loops, and creating software with agents through autonomous harnesses. These techniques are possible due to recent developments of AI and the broad software ecosystem.
 
 ## Prerequisites
 
@@ -46,7 +46,7 @@ Prefer `just` over raw `make`, `yarn` + `npm` when it comes to commands.
 
 For more details, see `docker-compose.yml`.
 
-## Navigating the platform
+## App Navigation
 
 After running `just do-it`:
 
@@ -59,7 +59,7 @@ After running `just do-it`:
    - Username: `admin`
    - Password: `admin`
 
-Sign-in credentials are entered on the hosted Keycloak login page. If you change Keycloak realm auth-flow settings in `keycloak/app-realm.json`, reset the Keycloak DB volume so import changes are applied on next start.
+Sign-in credentials are entered on the hosted Keycloak login page.
 
 ## Tech Stack
 

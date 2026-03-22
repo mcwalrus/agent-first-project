@@ -77,7 +77,7 @@
       "credentials": [
         {
           "type": "password",
-          "value": "testpwd123!",
+          "value": "password",
           "temporary": false
         }
       ]
