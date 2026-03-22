@@ -44,24 +44,26 @@ I prefer `just` over `make` when it comes to repo commands.
 
 **\*Note**: Always run the dev server locally when agents are running.\*
 
-## Key Routes
+## Getting Started
+
+_Please read through these documents:_
+
+- ### [Introduction](./docs/INTRO.md) (MUST)
+- ### [Tech Stacks For Agents](./docs/TECH_STACK.md)
+- ### [Understanding Your Backpressure](./docs/BACKPRESSURE.md)
+- ### [Everything Is A Loop Now](./docs/AGENT_LOOP.md)
+
+Once you undertand these concepts you will be ready to jump into the development process.
+
+## App Navigation
+
+### Key Routes
 
 - App: [http://localhost:3000](http://localhost:3000)
 - Mailpit: [http://localhost:8025/](http://localhost:8025/) (mock smtp server)
 - Keycloak: [http://localhost:8080](http://localhost:8080) (id + auth service)
 
-## Getting Started
-
-_Please read through these documents:_
-
-- [Introduction](./docs/INTRO.md) **(must read)**
-- [Tech Stacks For Agents](./docs/TECH_STACK.md)
-- [Understanding Your Backpressure](./docs/BACKPRESSURE.md)
-- [Everything Is A Loop Now](./docs/AGENT_LOOP.md)
-
-Once you undertand these concepts you will be ready to jump into the development process.
-
-## App Navigation
+### Login Flows
 
 **After running `just do-it`:**
 
