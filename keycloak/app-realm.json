@@ -68,7 +68,7 @@
   ],
   "users": [
     {
-      "username": "test-user",
+      "username": "testuser",
       "email": "user@test-org.local",
       "firstName": "Test",
       "lastName": "User",
@@ -77,7 +77,7 @@
       "credentials": [
         {
           "type": "password",
-          "value": "Test1234!",
+          "value": "testpwd123!",
           "temporary": false
         }
       ]

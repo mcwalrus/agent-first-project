@@ -6,6 +6,7 @@
 .pnp.js
 .yarn/install-state.gz
 .claude/worktrees
+update-git.sh
 
 # testing
 /coverage
@@ -50,3 +51,6 @@ tests/.auth/*.json
 # Dolt database files (added by bd init)
 .dolt/
 *.db
+
+# Docker Compose bind-mounted Postgres data (see docker-compose.yml)
+.docker/volumes/

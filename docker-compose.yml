@@ -14,7 +14,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - app_db_data:/var/lib/postgresql/data
+      - ./.docker/volumes/app-db:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U user -d app_db"]
       interval: 5s
@@ -32,7 +32,7 @@ services:
     ports:
       - "5433:5432"
     volumes:
-      - keycloak_db_data:/var/lib/postgresql/data
+      - ./.docker/volumes/keycloak-db:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${KC_DB_USERNAME:-keycloak} -d keycloak_db"]
       interval: 5s
@@ -80,7 +80,3 @@ services:
     depends_on:
       keycloak-db:
         condition: service_healthy
-
-volumes:
-  app_db_data:
-  keycloak_db_data:

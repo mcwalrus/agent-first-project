@@ -1,16 +1,18 @@
-# Agent-first Webapp
+# Software Development, AI-First Tutorial
 
-Learn to start working with coding agents.
+This tutorial is aimed to bring anyone up to speed with the principles of working with coding agents, the 'ralph-wiggum' technique i.e placing agents into loops, and creating software with agents through autonomous harnesses. These techniques are possible due to recent developments of AI and the broader software ecosystem.
 
 ## Prerequisites
 
-- MacOS
-- Node.js 24+ (use [nvm](https://github.com/nvm-sh/nvm))
+- MacOS (for now)
+- Node.js 24+ ([nvm](https://github.com/nvm-sh/nvm) recommended)
 - Yarn
 - Docker and Docker Compose
 - [just](https://github.com/casey/just) (`brew install just`)
 
 ## Quick start
+
+Local environment setup:
 
 ```sh
 cp .env.example .env
@@ -19,22 +21,14 @@ yarn playwright:install
 just do-it
 ```
 
-## Key Routes
-
-- Dev App: [http://localhost:3000](http://localhost:3000)
-- Keycloak: [http://localhost:8080](http://localhost:8080)
-- Mailpit: [http://localhost:8025/](http://localhost:8025/)
-
-For more details, see `docker-compose.yml`.
-
 ## Commands
 
-Prefer `just` over raw `yarn` when a recipe exists.
+Prefer `just` over raw `make`, `yarn` + `npm` when it comes to commands.
 
 | Goal                            | Command                |
 | ------------------------------- | ---------------------- |
 | List commands                   | `just`                 |
-| Run all                         | `just do-it`           |
+| Run all services                | `just do-it`           |
 | Run dev server                  | `just dev`             |
 | Run docker compose              | `just db-up + db-down` |
 | Unit tests                      | `just test`            |
@@ -42,7 +36,15 @@ Prefer `just` over raw `yarn` when a recipe exists.
 | Prisma schema                   | `just prisma-check`    |
 | Verify full build               | `just build-check`     |
 
-**Note**: Please run the application locally when agents are working.
+**\*Note**: Always run the dev server locally when agents are running.\*
+
+## Key Routes
+
+- App: [http://localhost:3000](http://localhost:3000)
+- Mailpit: [http://localhost:8025/](http://localhost:8025/) (mock smtp server)
+- Keycloak: [http://localhost:8080](http://localhost:8080) (id + auth service)
+
+For more details, see `docker-compose.yml`.
 
 ## Navigating the platform
 
@@ -51,13 +53,23 @@ After running `just do-it`:
 1. Open [http://localhost:3000](http://localhost:3000)
 2. Go to [http://localhost:3000/login](http://localhost:3000/login)
 3. Sign in with test auth:
-   - Username: `test-user`
-   - Password: `Test1234!`
+   - Username: `testuser`
+   - Password: `password`
 4. For Keycloak admin access, open [http://localhost:8080/admin](http://localhost:8080/admin):
    - Username: `admin`
    - Password: `admin`
 
 Sign-in credentials are entered on the hosted Keycloak login page. If you change Keycloak realm auth-flow settings in `keycloak/app-realm.json`, reset the Keycloak DB volume so import changes are applied on next start.
+
+## Tech Stack
+
+**TypeScript, Next.js 14, Prisma + PostgreSQL**: I have choosen these initial foundations based off compiler and type-system feedback. Using them allows for full `tsc` safety right down to your database schema. Note, Prisma generates TypeScript types from your db schema.
+
+**Jest + Playwright** allows for agent feedback through unit tests, end-to-end (E2E) application tests, and allows access to view / make edits to the web application while development server is running.
+
+**Keycloak** provides an extensible open-source Identity / Access Management (IAM) solution that agents are familiar with, due to it's popularity. Agents are further able to query and view documentation and APIs to work out how to create app authentication flows.
+
+**Husky** is a tiny git pre-commit framework to provide local CI guardrails for agents before commits are made. These CI checks help guide and prevent our agents from commiting bad code i.e compiler-based errors, broken unit tests, e2e tests. Agents will see feedback and be required to fix before moving to the next task.
 
 ## Project structure
 
@@ -92,13 +104,3 @@ Please read: https://banay.me/dont-waste-your-backpressure/
 ### Model Context Protocol
 
 **MCP (Model Context Protocol)** is an open source standard for AI-tool integrations. It gives Claude Code access to your tools, databases, and APIs - enabling things like querying PostgreSQL, interacting with the frontend via Playwright, or accessing the local filesystsem. MCP servers run at runtime during the agents development life-cycle, and can close the loop for agents gathering specific feedback. MCP tools and resources are registered with agents and sent during model inference (i.e API calls made to claude.ai via claude-code agent).
-
-## Tech Stack
-
-**TypeScript, Next.js 14, Prisma + PostgreSQL**: I have choosen these initial foundations based off compiler and type-system feedback. Using them allows for full `tsc` safety right down to your database schema. Note, Prisma generates TypeScript types from your db schema.
-
-**Jest + Playwright** allows for agent feedback through unit tests, end-to-end (E2E) application tests, and allows access to view / make edits to the web application while development server is running.
-
-**Keycloak** provides an extensible open-source Identity / Access Management (IAM) solution that agents are familiar with, due to it's popularity. Agents are further able to query and view documentation and APIs to work out how to create app authentication flows.
-
-**Husky** is a tiny git pre-commit framework to provide local CI guardrails for agents before commits are made. These CI checks help guide and prevent our agents from commiting bad code i.e compiler-based errors, broken unit tests, e2e tests. Agents will see feedback and be required to fix before moving to the next task.
