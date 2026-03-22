@@ -1,6 +1,6 @@
-# Automotous Agent-First Software Development Tutorial
+# Agent-First Software Development Tutorial
 
-This tutorial is aimed to bring anyone up to speed with the principles of working with coding agents to build software autonomously for you.
+This tutorial is aimed to bring anyone up to speed with the modern practices and principles of working with coding agents autonomously. These techniques are possible today due to recent developments in broader software ecosystem, as opposed where AI is at by itself today.
 
 ## Prerequisites
 
@@ -52,7 +52,7 @@ _Please read through these documents:_
 - ### [Tech Stacks For Agents](./docs/TECH_STACK.md)
 - ### [Understanding Your Backpressure](./docs/BACKPRESSURE.md)
 
-Once you have read these, you are good to start.
+Once you have read these articles, you are good to start.
 
 ## App Navigation
 
@@ -83,7 +83,13 @@ Sign-in credentials are entered on the hosted Keycloak login page.
 
 ## Agent Frameworks
 
-First off, you will want to [Setup Claude Code](./docs/CLAUDE_SETUP.md). Please choose between either of the options:
+First off, you will want to [Setup Claude Code](./docs/CLAUDE_SETUP.md).
+
+Please choose between some of the options:
+
+### [cursor.com](https://cursor.com/)
+
+Cursor is an IDE envorinment, or agentic coding editor for developing software with agents. They have made some useful innovations in how agents can be used through a coding editor. This is the approach I would recommend you start with the least. We really want to see what agents can do on their own. I use Cursor occasionally to brute force immediate problems with better visualisations to what CLI agents can provide. Cursor agents have gone much further than the IDE which I have not explored yet.
 
 ### [github.com/snarktank/ralph](https://github.com/snarktank/ralph)
 
