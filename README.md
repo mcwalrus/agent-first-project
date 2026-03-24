@@ -2,7 +2,7 @@
 
 This tutorial aims to bring anyone up to speed with the modern practices and principles of work with coding agents autonomously. These techniques are possible today due to recent developments in broader software ecosystem, as opposed where AI is at by itself today.
 
-## Tutorial Content
+## Tutorial
 
 Read through the tutorial itinerary:
 
@@ -19,3 +19,13 @@ Read through the tutorial itinerary:
 | 8   | [What To Do Next](./docs/NEXT_STEPS.md)                   |
 | 9   | [Everything Is A Loop Now](./docs/AGENT_LOOP.md)          |
 | 10  | [Final Thoughts](./docs/FINAL.md)                         |
+
+---
+
+## About
+
+This module is maintained by Max Collier under an MIT License Agreement.
+
+Please report any issues or feature requests to the [GitHub repository](https://github.com/mcwalrus/agent-first-project).
+
+Please contact me by email for personal requests.

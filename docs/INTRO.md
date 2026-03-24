@@ -14,15 +14,18 @@ If you are not in the position where you relate to the industry leading experts,
 
 ## Motivation
 
-- [Huntley's blog](https://ghuntley.com/)
-- [Everything is a ralph loop](https://ghuntley.com/loop/)
-- [Software development now costs less than minimum wage](https://ghuntley.com/real/)
-- [Ralph Wiggum as a "software engineer"](https://ghuntley.com/ralph/)
-- [cursed-lang.org](https://cursed-lang.org/)
+[Software development now costs less than minimum wage](https://ghuntley.com/real/)
 
 I have proved Huntley's theory to myself which is why I've gone through the effort to make this tutorial for others. If you do not believe in the premise of this article, I would challenge you to go prove it for yourself before casting judgement. Understanding this will deeply change the way of how you view AI, the roles of product design, software development as well as software engineering practices. In my experience, AI is able to solve problems in ways that are both faster, better than any human counterpart. It can work all the way through the night, and I will relate loop techniques that exist which can be left running 24/7 without interference.
 
 **The purpose of this tutorial is so you can prove it for yourself.**
+
+## Other References
+
+- [Huntley's blog](https://ghuntley.com/)
+- [Everything is a ralph loop](https://ghuntley.com/loop/)
+- [Ralph Wiggum as a "software engineer"](https://ghuntley.com/ralph/)
+- [cursed-lang.org](https://cursed-lang.org/)
 
 ---
 
