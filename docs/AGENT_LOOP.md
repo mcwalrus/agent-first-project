@@ -4,7 +4,7 @@ Geoffrey Huntley is known as the original founder the technique for putting agen
 
 ## How do Agent Loops work?
 
-There are some ideas for how agent loops work and how they achieve the results they do. The overarching theme of working with an agent loop is: Prompt → Plan → Act → Observe → Repeat. The loop is responsible for breaking up work appropriately, running agents agents tasks or user stories until an overall goal is satisfied. Agents may call tools, validate results, and retaining useful information for other agents. For iterative tasks, a new agent should be used with a fresh context window.
+There are some ideas for how agent loops work and how they achieve the results they do. The overarching theme of working with an agent loop is: Prompt → Plan → Act → Observe → Repeat. The loop is responsible for breaking up work appropriately, running agents through tasks or user stories until an overall goal is satisfied. Agents may call tools, validate results, and retaining useful information for other agents. For iterative tasks, a new agent should be used with a fresh context window.
 
 **From a technical perspective, this solves:**
 
@@ -26,7 +26,7 @@ The only role we may be required to take is to include some guardrails in order 
 
 ## Evolutionary Software
 
-Taking the loop idea further, Huntley describes **evolutionary software** — systems where the loop doesn't just build features but also can be placed in production envrionments to perform self-healing on system errors or failures. The "evolutionary" framing is deliberate. Failures are pressure, iterations are generations, and product specifications can provide the fitness function. A system running under a ralph loop in production setting doesn't just get fixed — it drifts toward robustness and converging over time.
+Taking the loop idea further, Huntley describes **evolutionary software** — systems where the loop doesn't just build features but also can be placed in production environments to perform self-healing on system errors or failures. The "evolutionary" framing is deliberate. Failures are just pressure, iterations are generations, and product specifications with scope can provide the fitness function. A system running with agents meaasuring production failures setting doesn't just get fixed — it drifts toward robustness software over time - as opposed to decay.
 
 ## The Broader Principle
 
@@ -38,10 +38,18 @@ The generalisation of _"Everything Is a Loop Now"_ beyond software has serious s
 
 This means the methodology is not really about coding. It is a general framework for **delegating cognitive work to autonomous iterative processes**, with humans operating at the level of goals and constraints rather than execution. This can be applied to any form of business problems that need to be solved.
 
-## Further Reading
+## Related Articles
 
 - [Huntley's Blog](https://ghuntley.com/) - Huntley's thoughts
 - [Everything is a ralph loop](https://ghuntley.com/loop/) - General theme
 - [Ralph Wiggum as a "software engineer"](https://ghuntley.com/ralph/) — Huntley's original essay
 - [how-to-ralph-wiggum (GitHub)](https://github.com/ghuntley/how-to-ralph-wiggum) — practical implementation guide
 - [Software development now costs less than than the wage of a minimum wage worker](https://ghuntley.com/real/) - always a reference
+
+---
+
+_Next: [Understanding Your Backpressure](./BACKPRESSURE.md)_
+
+_See also: [Tech Stacks For Agents](./TECH_STACK.md) · [Final Thoughts](./FINAL.md)_
+
+[← Back to README](../README.md)

@@ -4,7 +4,7 @@ A practical guide to setting up `claude` code cli, connecting it to your codebas
 
 ## Create an Account
 
-Head to [platform.claude.com](https://platform.claude.com) and sign up using your email and password, or SSO alternative. Once you are registered, you will land on your developer dashboard where you can manage API keys, check billing, and monitor usage. This will be the perfered method of managing coding agent API model usage as opposed to a Claude Plan, which will tend to hit max rate limiting frequently when using for claude coding agents.
+Head to [platform.claude.com](https://platform.claude.com) and sign up using your email and password, or SSO alternative. Once you are registered, you will land on your developer dashboard where you can manage API keys, check billing, and monitor usage. This will be the preferred method of managing coding agent API model usage as opposed to a Claude Plan, which will tend to hit max rate limiting frequently when using for claude coding agents.
 
 ## Register an API Key
 
@@ -12,9 +12,9 @@ From the dashboard, click **API Keys** in the left sidebar. Click **+ Create Key
 
 ## Install Claude Code
 
-Claude Code is a terminal-based coding agent. Visit [https://github.com/anthropics/claude-code](https://github.com/anthropics/claude-code) and follow the instructions.
+Claude Code is a terminal-based coding agent. Visit [https://claude.ai/code](https://claude.ai/code) and follow the instructions.
 
-You will then need to set your API KEY within your enviornment:
+You will then need to set your API KEY within your environment:
 
 ```bash
 export ANTHROPIC_API_KEY="..."
@@ -44,14 +44,11 @@ Set a sensible starting budget in API model usage credits. Consider on setup:
 
 ## Using Claude Skills
 
-Agent skills are modular capabilities that extend claude-code. Each skill packages instructions, metadata, and optional resources like scripts and templates that Claude loads automatically when relevant. In December 2025, Anthropic released the Agent Skills specification as an open standard, and the format is now compatible across Claude Code, OpenAI Codex CLI, and other AI coding assistants. Skills ecosystem has grown rapidly - there are now thousands of new community-contributed skills covering everything from frontend desig, security auditing, git automations and document generation.
+Agent skills are modular capabilities that extend claude-code. Each skill packages instructions, metadata, and optional resources like scripts and templates that Claude loads automatically when relevant. Skills allow you to compose reusable agent behaviours — from frontend scaffolding and security auditing to git automations and document generation — and share them across projects.
 
 **Useful links:**
 
-- [claude.com/skills](https://claude.com/skills) — Anthropic's official skill showcase
-- [github.com/anthropics/skills](https://github.com/anthropics/skills) — Anthropic's open-source skill examples
-- [skillhub.club](https://skillhub.club) — community marketplace with 7,000+ evaluated skills
-- [skillsmp.com](https://skillsmp.com) — cross-agent skill directory for Claude Code, Codex & ChatGPT
+- [Claude Code documentation](https://docs.claude.ai/en/docs/claude-code/overview) — official docs covering skills, hooks, and configuration
 
 ## Antrophic’s Mistake
 
@@ -64,3 +61,11 @@ rm -rf ~/.claude/skills/ralph_wiggum/
 Original Skill:
 
 - [plugins/ralph-wiggum](https://github.com/anthropics/claude-code/tree/main/plugins/ralph-wiggum)
+
+---
+
+_Next: [Beads Setup Guide](./BEADS_SETUP.md)_
+
+_See also: [Tech Stacks For Agents](./TECH_STACK.md)_
+
+[← Back to README](../README.md)

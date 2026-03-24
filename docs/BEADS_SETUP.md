@@ -232,3 +232,11 @@ uv tool upgrade beads-mcp
 bd doctor
 bd doctor --fix
 ```
+
+---
+
+_Next: [Your First Project](./first-project.md)_
+
+_See also: [Setup Claude Code](./CLAUDE_SETUP.md) · [Tech Stacks For Agents](./TECH_STACK.md)_
+
+[← Back to README](../README.md)

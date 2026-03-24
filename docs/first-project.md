@@ -1,6 +1,6 @@
 # Your First Project
 
-**_Start With Your Own Idea._** The most useful thing you can build is something that solves a problem you actually have. If you spend most of your time in a spreadsheet, build a tool that replaces it. If you copy and paste between systems daily, build something that connects them. You already understand the problem, so you will make better decisions faster and know immediately whether what you built works.
+**_Let's Start With Your Own Idea._** The most useful thing you can build is something that solves a problem you actually have. If you spend most of your time in a spreadsheet, build a tool that replaces it. If you copy and paste between systems daily, build something that connects them. You already understand the problem, so you will make better decisions faster and know immediately whether what you built works.
 
 **Ask yourself:** What do you spend the most time doing that is repetitive, slow, or frustrating?
 
@@ -59,3 +59,9 @@ Notice how two of the four projects above are AI products. You are using an agen
 Autonomous AI agents are built for this. The agent harnesses, feedback loops, and quality gates exist because building AI features requires the same engineering discipline as anything else. The difference is your own limitation in the choices you make, relative to how much capital you are willing to spend - or risk - on your project.
 
 The feedback cycle might be faster and the surface area for failure is different. Prompts are product decisions. The shape of your inputs and how you handle agent outputs determine whether the feature works. Start with one agent doing one thing well. The Debate Club's three-agent structure is just three simple, constrained agents in sequence — composition follows from getting each piece right first.
+
+---
+
+_See also: [Understanding Your Backpressure](./BACKPRESSURE.md) · [Everything Is A Loop Now](./AGENT_LOOP.md)_
+
+[← Back to README](../README.md)
