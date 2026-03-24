@@ -13,16 +13,18 @@ This tutorial aims to bring anyone up to speed with the modern practices and pri
 
 ## Getting Started
 
-Read the tutorial documents in this order. Steps 4–5 match the [Setup Claude Code](#agent-frameworks) and [Beads Setup Guide](#agent-frameworks) material in **Agent Frameworks** below.
+Read the tutorial itinerary in this order.
 
-| #   | Document                                                  | Notes                                      |
-| --- | --------------------------------------------------------- | ------------------------------------------ |
-| 1   | [Introduction](./docs/INTRO.md)                           | Context and motivation                     |
-| 2   | [Understanding Your Backpressure](./docs/BACKPRESSURE.md) | Feedback loops and agent guardrails        |
-| 3   | [Tech Stacks For Agents](./docs/TECH_STACK.md)            | Why this repo’s stack and MCP integrations |
-| 4   | [Setup Claude Code](./docs/CLAUDE_SETUP.md)               | Claude Code CLI and skills                 |
-| 5   | [Beads Setup Guide](./docs/BEADS_SETUP.md)                | `bd` CLI, hooks, and optional MCP          |
-| 6   | [Your First Project](./docs/first-project.md)             | Apply what you learned to your own idea    |
+| #   | Document                                                  | Notes                                         |
+| --- | --------------------------------------------------------- | --------------------------------------------- |
+| 1   | [Introduction](./docs/INTRO.md)                           | Context and motivation                        |
+| 2   | [Understanding Your Backpressure](./docs/BACKPRESSURE.md) | Feedback loops and agent guardrails           |
+| 3   | [Tech Stacks For Agents](./docs/TECH_STACK.md)            | Why this repo’s stack and MCP integrations    |
+| 4   | [Setup Claude Code](./docs/CLAUDE_SETUP.md)               | Claude Code CLI and skills                    |
+| 5   | [Beads Setup Guide](./docs/BEADS_SETUP.md)                | `bd` CLI, hooks, and optional MCP             |
+| 6   | [Your First Project](./docs/first-project.md)             | Apply what you learned to your own idea       |
+| 7   | [Agent Frameworks](./docs/AGENT_FRAMEWORKS.md)            | Compare harness/framework options in one page |
+| 8   | [What To Do Next](./docs/NEXT_STEPS.md)                   | Follow-up references and iteration checklist  |
 
 Once you have worked through the table above, you are ready to use agents on a real project.
 
@@ -88,32 +90,15 @@ Sign-in credentials are entered on the hosted Keycloak login page.
 
 ## Agent Frameworks
 
-First off, you will want to [Setup Claude Code](./docs/CLAUDE_SETUP.md).
+Framework and harness recommendations are now in a dedicated page:
 
-Please choose between some of the options:
-
-### [github.com/snarktank/ralph](https://github.com/snarktank/ralph)
-
-The `snarktank/ralph` implementation provides a minimal approach from planning and building from a Product Requirements Document (PRD), looping agents through developed user stories using `jq` and _progress.txt_. This is a good choice for those getting to into it to grasp with the fundementials of ralph. Downside is that it's a tedious / manual approach.
-
-### [github.com/steveyegge/beads](https://github.com/steveyegge/beads)
-
-Beads (`bd`) is a persistent memory and task tracker for AI agents. I have generated an overview from claude: [Tutorial HTML](./docs/index.html) (you may need to drag this file into your browser to view). This is my recommended approach to leverage for regular tasks, but is not an AI harness runner within itself. The module below provides a useful task runner. Follow [Beads Setup Guide](./docs/BEADS_SETUP.md) to integrate beads with agents.
-
-### [github.com/mj-meyer/choo-choo-ralph](https://github.com/mj-meyer/choo-choo-ralph)
-
-The `choo-choo-ralph` implementation is a combination of _beads_ (`bd`) and the ralph loop in one. It's a bit more thorough in it's approach, and will cost somewhat more than the former depending on it's scope of work. This approach works well, it is still manually involved during the spec and pour stages of planning. Ideally you can be more prompt, notification driven on architecture. Minimal REPL loops, that is read-eval-print may tend to do a better job than heavier frameworks such as this.
+- [Agent Frameworks](./docs/AGENT_FRAMEWORKS.md)
 
 ## Coding Editors
 
 ### [cursor.com](https://cursor.com/)
 
 Cursor is an IDE envorinment, or agentic coding editor for developing software with agents. They have made some useful innovations in how agents can be used through a coding editor. This is the approach I would recommend you start with the least. We really want to see what agents can do on their own. I use Cursor occasionally to brute force immediate problems with better visualisations to what CLI agents can provide. Cursor agents have gone much further than the IDE which I have not explored yet.
-
-## More Resources
-
-- [latentpatterns.com](https://latentpatterns.com)
-- [latentpatterns.com/glossary/agent-harness](https://latentpatterns.com/glossary/agent-harness)
 
 ## After the tutorial
 
