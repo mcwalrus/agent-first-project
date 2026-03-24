@@ -49,6 +49,7 @@ I prefer `just` over `make` when it comes to repo commands.
 _Please read through these documents:_
 
 - ### [Introduction](./docs/INTRO.md)
+- ### [Your First Project](./docs/first-project.md)
 - ### [Tech Stacks For Agents](./docs/TECH_STACK.md)
 - ### [Understanding Your Backpressure](./docs/BACKPRESSURE.md)
 
