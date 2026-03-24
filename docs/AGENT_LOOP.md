@@ -38,18 +38,12 @@ The generalisation of _"Everything Is a Loop Now"_ beyond software has serious s
 
 This means the methodology is not really about coding. It is a general framework for **delegating cognitive work to autonomous iterative processes**, with humans operating at the level of goals and constraints rather than execution. This can be applied to any form of business problems that need to be solved.
 
-## Related Articles
-
-- [Huntley's Blog](https://ghuntley.com/) - Huntley's thoughts
-- [Everything is a ralph loop](https://ghuntley.com/loop/) - General theme
-- [Ralph Wiggum as a "software engineer"](https://ghuntley.com/ralph/) — Huntley's original essay
-- [how-to-ralph-wiggum (GitHub)](https://github.com/ghuntley/how-to-ralph-wiggum) — practical implementation guide
-- [Software development now costs less than than the wage of a minimum wage worker](https://ghuntley.com/real/) - always a reference
+For essays, motivation links, and practical ralph resources, see [Introduction](./INTRO.md) and [Setup Claude Code](./CLAUDE_SETUP.md).
 
 ---
 
-_Next: [Understanding Your Backpressure](./BACKPRESSURE.md)_
+_Next: [Final Notes](./FINAL.md)_
 
-_See also: [Tech Stacks For Agents](./TECH_STACK.md) · [Final Thoughts](./FINAL.md)_
+_See also: [Introduction](./INTRO.md) · [Tech Stacks For Agents](./TECH_STACK.md)_
 
 [← Back to README](../README.md)

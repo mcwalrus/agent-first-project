@@ -14,6 +14,8 @@ If you are not in the position where you relate to the industry leading experts,
 
 ## Motivation
 
+- [Huntley's blog](https://ghuntley.com/)
+- [Everything is a ralph loop](https://ghuntley.com/loop/)
 - [Software development now costs less than minimum wage](https://ghuntley.com/real/)
 - [Ralph Wiggum as a "software engineer"](https://ghuntley.com/ralph/)
 - [cursed-lang.org](https://cursed-lang.org/)
@@ -24,6 +26,6 @@ I have proved Huntley's theory to myself which is why I've gone through the effo
 
 ---
 
-_Next: [Everything Is A Loop Now](./AGENT_LOOP.md) → [Your First Project](./first-project.md)_
+_Next: [Understanding Your Backpressure](./BACKPRESSURE.md)_
 
 [← Back to README](../README.md)

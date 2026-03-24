@@ -44,6 +44,6 @@ Summarised by Claude:
 
 _Next: [Tech Stacks For Agents](./TECH_STACK.md)_
 
-_See also: [Everything Is A Loop Now](./AGENT_LOOP.md)_
+_See also: [Introduction](./INTRO.md)_
 
 [← Back to README](../README.md)

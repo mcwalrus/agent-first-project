@@ -62,6 +62,8 @@ Original Skill:
 
 - [plugins/ralph-wiggum](https://github.com/anthropics/claude-code/tree/main/plugins/ralph-wiggum)
 
+For a practical guide to the technique Huntley describes, see [how-to-ralph-wiggum (GitHub)](https://github.com/ghuntley/how-to-ralph-wiggum).
+
 ---
 
 _Next: [Beads Setup Guide](./BEADS_SETUP.md)_

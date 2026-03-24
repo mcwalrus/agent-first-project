@@ -28,6 +28,6 @@ I will thank you for time in engaging in this approach to software development. 
 
 ---
 
-_See also: [Everything Is A Loop Now](./AGENT_LOOP.md) · [Introduction](./INTRO.md)_
+_See also: [Everything Is A Loop Now](./AGENT_LOOP.md) · [Introduction](./INTRO.md) · [Your First Project](./first-project.md)_
 
 [← Back to README](../README.md)

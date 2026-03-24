@@ -11,6 +11,21 @@ This tutorial aims to bring anyone up to speed with the modern practices and pri
 - Docker and Docker Compose
 - [just](https://github.com/casey/just) (`brew install just`)
 
+## Getting Started
+
+Read the tutorial documents in this order. Steps 4–5 match the [Setup Claude Code](#agent-frameworks) and [Beads Setup Guide](#agent-frameworks) material in **Agent Frameworks** below.
+
+| #   | Document                                                  | Notes                                      |
+| --- | --------------------------------------------------------- | ------------------------------------------ |
+| 1   | [Introduction](./docs/INTRO.md)                           | Context and motivation                     |
+| 2   | [Understanding Your Backpressure](./docs/BACKPRESSURE.md) | Feedback loops and agent guardrails        |
+| 3   | [Tech Stacks For Agents](./docs/TECH_STACK.md)            | Why this repo’s stack and MCP integrations |
+| 4   | [Setup Claude Code](./docs/CLAUDE_SETUP.md)               | Claude Code CLI and skills                 |
+| 5   | [Beads Setup Guide](./docs/BEADS_SETUP.md)                | `bd` CLI, hooks, and optional MCP          |
+| 6   | [Your First Project](./docs/first-project.md)             | Apply what you learned to your own idea    |
+
+Once you have worked through the table above, you are ready to use agents on a real project.
+
 ## Tech Stack
 
 - **TypeScript**: Provides type-safety compiler feedback for agents.
@@ -43,17 +58,6 @@ I prefer `just` over `make` when it comes to repo commands.
 | E2E (needs dev server on :3000) | `just e2e`             |
 
 **\*Note**: Always run the dev server locally when agents are running.\*
-
-## Getting Started
-
-_Please read through these documents:_
-
-- ### [Introduction](./docs/INTRO.md)
-- ### [Your First Project](./docs/first-project.md)
-- ### [Tech Stacks For Agents](./docs/TECH_STACK.md)
-- ### [Understanding Your Backpressure](./docs/BACKPRESSURE.md)
-
-Once you have read these articles, you are good to start.
 
 ## App Navigation
 
@@ -111,9 +115,9 @@ Cursor is an IDE envorinment, or agentic coding editor for developing software w
 - [latentpatterns.com](https://latentpatterns.com)
 - [latentpatterns.com/glossary/agent-harness](https://latentpatterns.com/glossary/agent-harness)
 
-## Conclusion
+## After the tutorial
 
-I have summarised my thoughts here:
+These two pieces sit after the main sequence: how agent loops fit the bigger picture, then closing notes.
 
 - ### [Everything Is A Loop Now](./docs/AGENT_LOOP.md)
 - ### [Final Thoughts](./docs/FINAL.md)

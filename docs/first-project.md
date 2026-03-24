@@ -62,6 +62,8 @@ The feedback cycle might be faster and the surface area for failure is different
 
 ---
 
-_See also: [Understanding Your Backpressure](./BACKPRESSURE.md) · [Everything Is A Loop Now](./AGENT_LOOP.md)_
+_Next: [Everything Is A Loop Now](./AGENT_LOOP.md)_
+
+_See also: [Understanding Your Backpressure](./BACKPRESSURE.md)_
 
 [← Back to README](../README.md)
