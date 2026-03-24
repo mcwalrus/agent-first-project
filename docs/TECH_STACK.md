@@ -55,6 +55,6 @@ Top-level folders only, if useful:
 
 _Next: [Setup Claude Code](./CLAUDE_SETUP.md)_
 
-_See also: [Understanding Your Backpressure](./BACKPRESSURE.md) · [Beads Setup Guide](./BEADS_SETUP.md)_
+_See also: [Understanding Your Backpressure](./BACKPRESSURE.md) · [Beads Setup Guide](./BEADS_SETUP.md) · [Reading Paths](./READING_PATHS.md)_
 
 [← Back to README](../README.md)

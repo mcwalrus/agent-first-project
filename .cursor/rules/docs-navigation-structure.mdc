@@ -8,17 +8,25 @@ alwaysApply: false
 
 When editing `README.md` or files under `docs/`, preserve this canonical tutorial order:
 
-`INTRO -> BACKPRESSURE -> TECH_STACK -> CLAUDE_SETUP -> BEADS_SETUP -> first-project -> AGENT_LOOP -> FINAL`
+`INTRO -> GETTING_STARTED -> BACKPRESSURE -> TECH_STACK -> CLAUDE_SETUP -> BEADS_SETUP -> first-project -> AGENT_LOOP -> FINAL`
+
+Also preserve path guidance from `docs/READING_PATHS.md`:
+
+- Practical path: `INTRO -> GETTING_STARTED -> CLAUDE_SETUP -> BEADS_SETUP -> first-project -> NEXT_STEPS -> AGENT_LOOP`
+- Technical path: `INTRO -> GETTING_STARTED -> BACKPRESSURE -> TECH_STACK -> CLAUDE_SETUP -> BEADS_SETUP -> AGENT_FRAMEWORKS`
 
 ## README Requirements
 
-- Keep an ordered reference table for the first six tutorial docs.
+- Keep an ordered reference table for the itinerary docs.
+- Keep practicality routing details in `docs/READING_PATHS.md` (not duplicated in long form in `README.md`).
 - Keep `AGENT_LOOP` and `FINAL` presented as end-of-tutorial reading.
 - Do not duplicate long framework/resource prose in `README.md`; link to dedicated docs pages instead.
 
 ## Footer Link Rules for docs/*
 
-- Prefer one `_Next:` link for forward movement.
+- Prefer explicit path-aware links:
+  - `_Next (Practical): ...`
+  - `_Next (Technical): ...`
 - Use `_See also:` only for related references that do not break the main sequence.
 - Keep `[← Back to README](../README.md)` at the bottom.
 

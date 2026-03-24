@@ -44,6 +44,6 @@ For essays, motivation links, and practical ralph resources, see [Introduction](
 
 _Next: [Final Notes](./FINAL.md)_
 
-_See also: [Introduction](./INTRO.md) · [Tech Stacks For Agents](./TECH_STACK.md)_
+_See also: [Introduction](./INTRO.md) · [Tech Stacks For Agents](./TECH_STACK.md) · [Reading Paths](./READING_PATHS.md)_
 
 [← Back to README](../README.md)

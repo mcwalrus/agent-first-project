@@ -1,18 +1,10 @@
 # Beads Setup Guide
 
-Beads (`bd`) is a persistent memory and task tracker for AI agents. This guide covers setup on macOS for Claude and Cursor.
-
-There are three ways to integrate beads with your editor. They are not mutually exclusive.
-
-| Option                       | Best for                       | Token cost  | Notes                                                                |
-| ---------------------------- | ------------------------------ | ----------- | -------------------------------------------------------------------- |
-| **CLI + Hooks** (`bd setup`) | Claude Code, Cursor            | ~1–2k       | Recommended. Direct CLI calls, auto-injects context on session start |
-| **Claude Code Plugin**       | Claude Code only               | ~1–2k + MCP | Adds `/beads:*` slash commands on top of hooks                       |
-| **MCP Server** (`beads-mcp`) | Claude Desktop, any MCP client | 10–50k      | Required when no shell access is available                           |
+Beads (`bd`) is a persistent memory and task tracker for AI agents. This guide covers setup on macOS for Claude and Cursor. There are three ways to integrate beads with your editor. They are not mutually exclusive.
 
 ---
 
-## 1. Install the `bd` CLI
+## Install the `bd` CLI
 
 ```bash
 brew install beads
@@ -26,7 +18,7 @@ bd version
 
 ---
 
-## 2. Initialise Beads in Your Project
+## Initialise Beads in Your Project
 
 Run once per project:
 
@@ -37,7 +29,7 @@ bd init
 
 ---
 
-## Option A — CLI + Hooks (Recommended)
+## CLI + Hooks
 
 The lightest integration. Beads auto-injects workflow context at session start via hooks, and you interact with `bd` directly via shell commands.
 
@@ -57,16 +49,9 @@ bd setup cursor
 
 This creates `.cursor/rules/beads.mdc` with static beads context. Unlike Claude Code hooks, Cursor rules are static — context won't refresh automatically mid-session.
 
-### Check your setup
-
-```bash
-bd setup claude --check
-bd setup cursor --check
-```
-
 ---
 
-## Option B — Claude Code Plugin
+## Claude Code Plugin
 
 Adds `/beads:*` slash commands and an autonomous `@task-agent` on top of the hooks from Option A. Install from within Claude Code:
 
@@ -89,9 +74,9 @@ Restart Claude Code after installing. Available commands:
 
 ---
 
-## Option C — MCP Server (beads-mcp)
+## Claude MCP Server
 
-Required for **Claude Desktop** (no shell access) and any other MCP-only client. Also works alongside Options A and B.
+Required for **Claude Desktop** (no shell access) and any other MCP-only client. Also works alongside Options A and B but is considered a more heavy-weight alternative (producing large +KB context injections).
 
 ### Install uv + beads-mcp
 
@@ -135,7 +120,7 @@ Restart Claude Desktop after saving.
 
 ### Claude Code
 
-Project-level — `.mcp.json` in your project root:
+Edit `~/.claude/mcp.json` (global) or `.mcp.json` (workspace):
 
 ```json
 {
@@ -149,23 +134,6 @@ Project-level — `.mcp.json` in your project root:
   }
 }
 ```
-
-Global — `~/.claude/mcp.json`:
-
-```json
-{
-  "mcpServers": {
-    "beads": {
-      "command": "beads-mcp",
-      "env": {
-        "BEADS_PATH": "/path/to/your/local/bd"
-      }
-    }
-  }
-}
-```
-
-> If `bd` paths differ per developer, add `.mcp.json` to `.gitignore` and have each person use `~/.claude/mcp.json` instead.
 
 ### Cursor
 
@@ -202,23 +170,7 @@ uv tool upgrade beads-mcp
 
 ## Troubleshooting
 
-**`uv` or `beads-mcp` not found when Claude Desktop or Cursor starts** — GUI apps don't inherit shell PATH. Use the full path in your config:
-
-```json
-{
-  "mcpServers": {
-    "beads": {
-      "command": "/Users/yourname/.local/bin/uv",
-      "args": ["--directory", "/path/to/beads/integrations/beads-mcp", "run", "beads-mcp"],
-      "env": {
-        "BEADS_PATH": "/path/to/your/local/bd"
-      }
-    }
-  }
-}
-```
-
-Run `which uv` and `which bd` in your terminal to get the exact paths.
+Run `which bd` in your terminal to get the exact paths.
 
 **MCP tools not loading** — ensure you're on v0.24.0+:
 
@@ -235,8 +187,10 @@ bd doctor --fix
 
 ---
 
-_Next: [Your First Project](./first-project.md)_
+_Next (Practical): [Your First Project](./first-project.md)_
 
-_See also: [Setup Claude Code](./CLAUDE_SETUP.md) · [Tech Stacks For Agents](./TECH_STACK.md)_
+_Next (Technical): [Agent Frameworks](./AGENT_FRAMEWORKS.md)_
+
+_See also: [Setup Claude Code](./CLAUDE_SETUP.md) · [Tech Stacks For Agents](./TECH_STACK.md) · [Reading Paths](./READING_PATHS.md)_
 
 [← Back to README](../README.md)

@@ -68,6 +68,6 @@ For a practical guide to the technique Huntley describes, see [how-to-ralph-wigg
 
 _Next: [Beads Setup Guide](./BEADS_SETUP.md)_
 
-_See also: [Tech Stacks For Agents](./TECH_STACK.md)_
+_See also: [Tech Stacks For Agents](./TECH_STACK.md) · [Reading Paths](./READING_PATHS.md)_
 
 [← Back to README](../README.md)

@@ -1,8 +1,10 @@
 # Your First Project
 
-**_Let's Start With Your Own Idea._** The most useful thing you can build is something that solves a problem you actually have. If you spend most of your time in a spreadsheet, build a tool that replaces it. If you copy and paste between systems daily, build something that connects them. You already understand the problem, so you will make better decisions faster and know immediately whether what you built works.
+**_Start With Your Own Idea First._**
 
-**Ask yourself:** What do you spend the most time doing that is repetitive, slow, or frustrating?
+The most useful thing you can build is something that solves a problem you actually have. If you spend most of your time in a spreadsheet, build a tool that replaces it. If you copy and paste between systems daily, build something that connects them. You already understand the problem, so you will make better decisions faster and know immediately whether what you built works.
+
+**Try ask yourself:** What do you spend the most time doing that is repetitive, slow, or frustrating?
 
 If something happens to come to mind, start there.
 
@@ -62,8 +64,10 @@ The feedback cycle might be faster and the surface area for failure is different
 
 ---
 
-_Next: [Everything Is A Loop Now](./AGENT_LOOP.md)_
+_Next (Practical): [What To Do Next](./NEXT_STEPS.md)_
 
-_See also: [Understanding Your Backpressure](./BACKPRESSURE.md)_
+_Next (Technical): [Everything Is A Loop Now](./AGENT_LOOP.md)_
+
+_See also: [Understanding Your Backpressure](./BACKPRESSURE.md) · [Reading Paths](./READING_PATHS.md)_
 
 [← Back to README](../README.md)

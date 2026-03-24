@@ -16,6 +16,12 @@ Beads (`bd`) is a persistent memory and task tracker for AI agents. I have gener
 
 The `choo-choo-ralph` implementation is a combination of _beads_ (`bd`) and the ralph loop in one. It's a bit more thorough in it's approach, and will cost somewhat more than the former depending on it's scope of work. This approach works well, it is still manually involved during the spec and pour stages of planning. Ideally you can be more prompt, notification driven on architecture. Minimal REPL loops, that is read-eval-print may tend to do a better job than heavier frameworks such as this.
 
+## Coding Editors
+
+### [cursor.com](https://cursor.com/)
+
+Cursor is an IDE envorinment, or agentic coding editor for developing software with agents. They have made some useful innovations in how agents can be used through a coding editor. This is the approach I would recommend you start with the least. We really want to see what agents can do on their own. I use Cursor occasionally to brute force immediate problems with better visualisations to what CLI agents can provide. Cursor agents have gone much further than the IDE which I have not explored yet.
+
 ---
 
 _See also: [Setup Claude Code](./CLAUDE_SETUP.md) · [Beads Setup Guide](./BEADS_SETUP.md)_
