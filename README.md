@@ -1,6 +1,6 @@
 # Agent-First Software Development Tutorial
 
-This tutorial is aimed to bring anyone up to speed with the modern practices and principles of working with coding agents autonomously. These techniques are possible today due to recent developments in broader software ecosystem, as opposed where AI is at by itself today.
+This tutorial aims to bring anyone up to speed with the modern practices and principles of work with coding agents autonomously. These techniques are possible today due to recent developments in broader software ecosystem, as opposed where AI is at by itself today.
 
 ## Prerequisites
 
@@ -87,21 +87,28 @@ First off, you will want to [Setup Claude Code](./docs/CLAUDE_SETUP.md).
 
 Please choose between some of the options:
 
-### [cursor.com](https://cursor.com/)
-
-Cursor is an IDE envorinment, or agentic coding editor for developing software with agents. They have made some useful innovations in how agents can be used through a coding editor. This is the approach I would recommend you start with the least. We really want to see what agents can do on their own. I use Cursor occasionally to brute force immediate problems with better visualisations to what CLI agents can provide. Cursor agents have gone much further than the IDE which I have not explored yet.
-
 ### [github.com/snarktank/ralph](https://github.com/snarktank/ralph)
 
-The `snarktank/ralph` implementation provides a minimal approach from planning and building from a Product Requirements Document (PRD), ticking off developed user stories as it goes. This is a good choice for those getting to into it to grasp with the fundementials of ralph. It's a bit tedious and manually involved to use as it's downside.
+The `snarktank/ralph` implementation provides a minimal approach from planning and building from a Product Requirements Document (PRD), looping agents through developed user stories using `jq` and _progress.txt_. This is a good choice for those getting to into it to grasp with the fundementials of ralph. Downside is that it's a tedious / manual approach.
 
 ### [github.com/steveyegge/beads](https://github.com/steveyegge/beads)
 
-Beads (`bd`) is a distributed + git-backed graph issue tracker designed specifically built first-class for AI coding agents. It provides agents with a persistent and structured memory system that replaces messy markdown plans with a dependency-aware graph, allowing many agents to handle long tasks without losing context over time. I have generated an overview from claude: [Beads Tutorial HTML](./docs/index.html) (you may need to drag this file into your browser to view).
+Beads (`bd`) is a persistent memory and task tracker for AI agents. I have generated an overview from claude: [Tutorial HTML](./docs/index.html) (you may need to drag this file into your browser to view). This is my recommended approach to leverage for regular tasks, but is not an AI harness runner within itself. The module below provides a useful task runner. Follow [Beads Setup Guide](./docs/BEADS_SETUP.md) to integrate beads with agents.
 
 ### [github.com/mj-meyer/choo-choo-ralph](https://github.com/mj-meyer/choo-choo-ralph)
 
 The `choo-choo-ralph` implementation is a combination of _beads_ (`bd`) and the ralph loop in one. It's a bit more thorough in it's approach, and will cost somewhat more than the former depending on it's scope of work. This approach works well, it is still manually involved during the spec and pour stages of planning. Ideally you can be more prompt, notification driven on architecture. Minimal REPL loops, that is read-eval-print may tend to do a better job than heavier frameworks such as this.
+
+## Coding Editors
+
+### [cursor.com](https://cursor.com/)
+
+Cursor is an IDE envorinment, or agentic coding editor for developing software with agents. They have made some useful innovations in how agents can be used through a coding editor. This is the approach I would recommend you start with the least. We really want to see what agents can do on their own. I use Cursor occasionally to brute force immediate problems with better visualisations to what CLI agents can provide. Cursor agents have gone much further than the IDE which I have not explored yet.
+
+## More Resources
+
+- [latentpatterns.com](https://latentpatterns.com)
+- [latentpatterns.com/glossary/agent-harness](https://latentpatterns.com/glossary/agent-harness)
 
 ## Conclusion
 
