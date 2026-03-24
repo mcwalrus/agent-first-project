@@ -10,7 +10,7 @@ The `snarktank/ralph` implementation provides a minimal approach from planning a
 
 ### [github.com/steveyegge/beads](https://github.com/steveyegge/beads)
 
-Beads (`bd`) is a persistent memory and task tracker for AI agents. I have generated an overview from claude: [Tutorial HTML](./index.html) (you may need to drag this file into your browser to view). This is my recommended approach to leverage for regular tasks, but is not an AI harness runner within itself. The module below provides a useful task runner. Follow [Beads Setup Guide](./BEADS_SETUP.md) to integrate beads with agents.
+Beads (`bd`) is a persistent memory and task tracker for AI agents. I have generated an beads overview [guide here](./Beads.pdf) (you may need to drag this file into your browser to view). This is my recommended approach to leverage for regular tasks, but is not an AI harness runner within itself. The module below provides a useful task runner. Follow [Beads Setup Guide](./BEADS_SETUP.md) to integrate beads with agents.
 
 ### [github.com/mj-meyer/choo-choo-ralph](https://github.com/mj-meyer/choo-choo-ralph)
 
