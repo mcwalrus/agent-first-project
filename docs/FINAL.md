@@ -58,8 +58,8 @@ _Regards, Max._
 
 The economic argument behind these notes is in the companion essays:
 
-- [The New Contract — When Tokens Replace Labour](the_new_contract.html)
-- [The Price of Everything, The Value of Nothing](ai-economics-essay.html)
+- [The New Contract — When Tokens Replace Labour](./pdfs/The_New_Contract.pdf)
+- [The Price of Everything, The Value of Nothing](./pdfs/The_Price_of_Everything.pdf)
 
 Here's the closing section with the resources presented as a list:
 
