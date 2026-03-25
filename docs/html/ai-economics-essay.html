@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Price of Everything, The Value of Nothing — AI and the End of the Labour Contract</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --ink: #1a1612;
+    --paper: #f5f0e8;
+    --warm-mid: #8a7d6b;
+    --accent: #c0392b;
+    --accent-muted: #e8d5d0;
+    --rule: #d4c9b8;
+    --highlight: #f7e98e;
+    --code-bg: #f0ebe0;
+    --max-width: 740px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  /* ── HEADER ─────────────────────────────── */
+  .site-header {
+    border-bottom: 2px solid var(--ink);
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background: var(--paper);
+    z-index: 100;
+  }
+
+  .site-header .blog-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .site-header .meta-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--warm-mid);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ── HERO ────────────────────────────────── */
+  .hero {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 5rem 2rem 3rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hero .category {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero .standfirst {
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: #4a3f35;
+    line-height: 1.65;
+    border-left: 3px solid var(--accent);
+    padding-left: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero .byline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--warm-mid);
+    letter-spacing: 0.08em;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  /* ── BODY ─────────────────────────────────── */
+  .article-body {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+  }
+
+  .article-body p {
+    margin-bottom: 1.5rem;
+  }
+
+  .article-body p + p {
+    text-indent: 0;
+  }
+
+  /* ── HEADINGS ─────────────────────────────── */
+  .article-body h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 3.5rem 0 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .article-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-style: italic;
+    margin: 2.5rem 0 0.75rem;
+    color: var(--accent);
+  }
+
+  /* ── PULLQUOTE ────────────────────────────── */
+  blockquote.pullquote {
+    margin: 2.5rem -1.5rem;
+    padding: 1.5rem 2rem 1.5rem 2.5rem;
+    background: var(--accent-muted);
+    border-left: 4px solid var(--accent);
+    font-size: 1.2rem;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #3a2a26;
+  }
+
+  blockquote.pullquote cite {
+    display: block;
+    margin-top: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    font-style: normal;
+    color: var(--warm-mid);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ── INLINE QUOTE ────────────────────────── */
+  blockquote.inline-quote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    background: var(--code-bg);
+    border-left: 2px solid var(--warm-mid);
+    font-size: 0.95rem;
+    color: #4a3f35;
+    font-style: italic;
+  }
+
+  /* ── PRICING TABLE ────────────────────────── */
+  .pricing-table-wrapper {
+    margin: 2.5rem 0;
+    overflow-x: auto;
+  }
+
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+  }
+
+  .pricing-table thead tr {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .pricing-table th {
+    padding: 0.6rem 0.9rem;
+    text-align: left;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.66rem;
+  }
+
+  .pricing-table tbody tr {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .pricing-table tbody tr:nth-child(even) {
+    background: rgba(0,0,0,0.025);
+  }
+
+  .pricing-table td {
+    padding: 0.6rem 0.9rem;
+    vertical-align: top;
+  }
+
+  .pricing-table .model-name {
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .pricing-table .price-low {
+    color: #27ae60;
+    font-weight: 500;
+  }
+
+  .pricing-table .price-high {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .pricing-table .price-mid {
+    color: #e67e22;
+    font-weight: 500;
+  }
+
+  .pricing-table caption {
+    text-align: left;
+    font-size: 0.7rem;
+    color: var(--warm-mid);
+    padding: 0.5rem 0;
+    font-style: italic;
+  }
+
+  /* ── CALLOUT BOX ─────────────────────────── */
+  .callout {
+    margin: 2.5rem 0;
+    padding: 1.5rem 1.8rem;
+    border: 1.5px solid var(--ink);
+    background: white;
+  }
+
+  .callout .callout-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    font-style: normal;
+  }
+
+  .callout p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout p:last-child { margin-bottom: 0; }
+
+  /* ── HIGHLIGHT ───────────────────────────── */
+  mark {
+    background: var(--highlight);
+    padding: 0 0.15em;
+  }
+
+  /* ── SECTION BREAK ──────────────────────── */
+  .section-break {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 3rem 0;
+    color: var(--warm-mid);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .section-break::before,
+  .section-break::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ── FOOTNOTE / SMALL ──────────────────── */
+  .fn {
+    font-size: 0.8rem;
+    color: var(--warm-mid);
+    font-style: italic;
+  }
+
+  /* ── CLOSING STATEMENT ──────────────────── */
+  .closing-statement {
+    margin: 3.5rem 0 0;
+    padding: 2rem;
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .closing-statement p {
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+
+  .closing-statement p:last-child { margin-bottom: 0; }
+
+  .closing-statement strong {
+    color: var(--highlight);
+  }
+
+  /* ── FOOTER ─────────────────────────────── */
+  .article-footer {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem;
+    border-top: 1px solid var(--rule);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--warm-mid);
+    line-height: 1.8;
+  }
+
+  .article-footer a {
+    color: var(--warm-mid);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .article-footer .refs-heading {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+  }
+
+  /* ── RESPONSIVE ─────────────────────────── */
+  @media (max-width: 600px) {
+    .hero { padding: 3rem 1.25rem 2rem; }
+    .article-body { padding: 2rem 1.25rem 4rem; }
+    blockquote.pullquote { margin: 2rem 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="blog-name" href="#">Personal Notes</a>
+  <span class="meta-label">March 2026 · Economics &amp; Technology</span>
+</header>
+
+<article>
+
+  <div class="hero">
+    <p class="category">Economics · AI · Labour · New Zealand</p>
+    <h1>The Price of Everything,<br><em>The Value of Nothing</em></h1>
+    <p class="standfirst">Software development now costs less per hour than a burger flipper. AI token prices are falling an order of magnitude annually. The social contract between labour and capital — the one that built the modern tax base, funded public services, and gave the professional middle class its identity — is being repriced in real time. This is what it actually means.</p>
+    <div class="byline">
+      <span>March 2026</span>
+      <span>~5,000 words</span>
+      <span>Western Economies Focus</span>
+    </div>
+  </div>
+
+  <div class="article-body">
+
+    <!-- ═══ PREFACE: MONEY AS A SOCIAL AGREEMENT ═══ -->
+    <h2>A Preface: Money as a Social Agreement</h2>
+
+    <p>Money is not a thing. It is a promise — a collectively agreed-upon ledger entry that records work done and defers its reward. When you accept a salary, you are accepting society's current valuation of your time and skill. When you spend that salary, you are making a claim on someone else's. The whole system rests on one foundational assumption: that human skill and human effort are the scarce inputs that productive economies compete to acquire.</p>
+
+    <p>That assumption is now being challenged in a way it never has been before. Not because machines can do physical work — they have been doing that since the Industrial Revolution. But because, for the first time, the cognitive labour that the knowledge economy pays a premium for — the analysis, the writing, the coding, the reasoning, the professional judgement — can be replicated at a cost approaching zero.</p>
+
+    <p>When a software engineer earns $120,000 a year and can be replaced by an agent loop running at $10.42 an hour, the social agreement that priced their contribution at $120,000 has not merely been renegotiated. It has been unilaterally voided by the market. <mark>The question is not whether this is happening. It is already happening.</mark> The question is what comes after — and whether the institutions we built to manage the distribution of economic gains are fast enough to respond.</p>
+
+    <p>This essay attempts to map the actual economics of that transition, grounded in the real numbers, the real engineering roadmaps, and the real political consequences for countries like New Zealand that sit downstream of a transformation they did not engineer and do not control.</p>
+
+    <!-- ═══ SECTION 1: THE CURRENT ECONOMICS OF COMPUTE ═══ -->
+    <h2>I. The Current Economics of Compute</h2>
+
+    <h3>$10.42 an Hour</h3>
+
+    <p>In February 2026, Geoffrey Huntley — a software engineer who has spent the past year carefully documenting the economics of AI-driven development — published a stark observation: the cost of producing software has fallen below the minimum wage of a McDonald's worker. He didn't write it as a metaphor. He meant it literally. His own usage data, running agent loops autonomously overnight, showed a per-hour equivalent cost of $10.42 for software production that previously required a team.</p>
+
+    <blockquote class="pullquote">
+      "The cost of software development is $10.42 an hour, which is less than minimum wage and a burger flipper at macca's gets paid more than that. What does it mean to be a software developer when everyone in the world can develop software?"
+      <cite>— Geoffrey Huntley, ghuntley.com/real, February 2026</cite>
+    </blockquote>
+
+    <p>This number is not derived from a benchmark or a research paper. It comes from a practitioner running real workloads. But to understand why it is structurally plausible — and why it is only going to fall further — you need to understand what is happening to the underlying unit cost of AI inference.</p>
+
+    <h3>The Token Price Table</h3>
+
+    <p>AI models are billed by the token — roughly three-quarters of a word. The table below shows current API pricing for the major providers as of March 2026. These are not projected figures. They are live market rates.</p>
+
+    <div class="pricing-table-wrapper">
+      <table class="pricing-table">
+        <caption>Source: Official provider pricing pages &amp; tldl.io/resources/llm-api-pricing-2026, March 2026. Prices per 1M tokens (USD).</caption>
+        <thead>
+          <tr>
+            <th>Provider / Model</th>
+            <th>Type</th>
+            <th>Input $/1M</th>
+            <th>Output $/1M</th>
+            <th>Context Window</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="model-name">Claude Opus 4.6</td>
+            <td>Proprietary</td>
+            <td class="price-high">$5.00</td>
+            <td class="price-high">$25.00</td>
+            <td>200K</td>
+            <td>Frontier flagship</td>
+          </tr>
+          <tr>
+            <td class="model-name">Claude Sonnet 4.6</td>
+            <td>Proprietary</td>
+            <td class="price-mid">$3.00</td>
+            <td class="price-mid">$15.00</td>
+            <td>200K</td>
+            <td>Daily workhorse</td>
+          </tr>
+          <tr>
+            <td class="model-name">Claude Haiku 4.5</td>
+            <td>Proprietary</td>
+            <td class="price-low">$0.25</td>
+            <td class="price-low">$1.25</td>
+            <td>200K</td>
+            <td>Budget tier</td>
+          </tr>
+          <tr>
+            <td class="model-name">GPT-5.1</td>
+            <td>Proprietary</td>
+            <td class="price-mid">$1.25</td>
+            <td class="price-mid">$10.00</td>
+            <td>400K</td>
+            <td>OpenAI flagship</td>
+          </tr>
+          <tr>
+            <td class="model-name">GPT-5.2 Pro</td>
+            <td>Proprietary</td>
+            <td class="price-high">$21.00</td>
+            <td class="price-high">$168.00</td>
+            <td>200K</td>
+            <td>Max reasoning tier</td>
+          </tr>
+          <tr>
+            <td class="model-name">Gemini 2.5 Pro</td>
+            <td>Proprietary</td>
+            <td class="price-mid">$1.25</td>
+            <td class="price-mid">$10.00</td>
+            <td>2M</td>
+            <td>Largest context window</td>
+          </tr>
+          <tr>
+            <td class="model-name">Gemini 2.0 Flash-Lite</td>
+            <td>Proprietary</td>
+            <td class="price-low">$0.075</td>
+            <td class="price-low">$0.30</td>
+            <td>1M</td>
+            <td>Cheapest mainstream</td>
+          </tr>
+          <tr>
+            <td class="model-name">DeepSeek V4</td>
+            <td>Open-Weight</td>
+            <td class="price-low">$0.30</td>
+            <td class="price-low">$0.50</td>
+            <td>1M</td>
+            <td>90% cache discount</td>
+          </tr>
+          <tr>
+            <td class="model-name">DeepSeek V3.2</td>
+            <td>Open-Weight</td>
+            <td class="price-low">$0.28</td>
+            <td class="price-low">$0.42</td>
+            <td>128K</td>
+            <td>Cache hit: $0.028/M</td>
+          </tr>
+          <tr>
+            <td class="model-name">DeepSeek R1</td>
+            <td>Open-Weight</td>
+            <td class="price-low">$0.55</td>
+            <td class="price-low">$2.19</td>
+            <td>128K</td>
+            <td>96% cheaper than o1</td>
+          </tr>
+          <tr>
+            <td class="model-name">Grok 4.1</td>
+            <td>Proprietary</td>
+            <td class="price-low">$0.20</td>
+            <td class="price-low">$0.50</td>
+            <td>2M</td>
+            <td>xAI</td>
+          </tr>
+          <tr>
+            <td class="model-name">Llama (self-hosted)</td>
+            <td>Open-Source</td>
+            <td class="price-low">~$0.05–0.90</td>
+            <td class="price-low">~$0.05–0.90</td>
+            <td>128K–1M</td>
+            <td>Pay your own compute</td>
+          </tr>
+          <tr>
+            <td class="model-name">Kimi K2.5 (Moonshot)</td>
+            <td>Open-Weight</td>
+            <td class="price-low">~$0.05</td>
+            <td class="price-low">~$0.15</td>
+            <td>2M</td>
+            <td>Chinese-origin; RL fine-tuneable</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The spread visible in this table is extraordinary. Claude Opus 4.6 costs $5 per million input tokens. DeepSeek V3.2, with largely comparable general performance on many benchmarks, costs $0.28 — roughly 94% cheaper. Self-hosted open-weight models remove the per-token cost almost entirely, replacing it with compute infrastructure you own and control.</p>
+
+    <h3>Proprietary vs. Open-Weight: The Trade-Off</h3>
+
+    <p>The choice between providers is not simply a cost decision. There are genuine trade-offs that practitioners need to understand.</p>
+
+    <p>Proprietary models from Anthropic, OpenAI, and Google offer the current frontier of capability, particularly for nuanced instruction-following, safety alignment, and complex reasoning. Claude's models, for instance, excel at tasks requiring careful adherence to complex specifications. They also come with enterprise-grade reliability guarantees, compliance documentation, and a data handling framework that regulated industries can rely upon. For businesses in healthcare, finance, or government — particularly in jurisdictions with strict data sovereignty laws — the compliance overhead of open-weight models may outweigh their cost advantage.</p>
+
+    <p>Open-weight models — DeepSeek, Llama, Kimi — offer something proprietary models cannot: the ability to run inference locally, on your own infrastructure, with your own data never leaving your control. For a New Zealand company processing commercially sensitive intellectual property through an AI coding tool, the question of whether that code is transiting a server in San Francisco or Beijing is not academic. It has legal and competitive dimensions. Open-weight models also allow fine-tuning on proprietary datasets, creating genuine specialisation that hosted models cannot replicate.</p>
+
+    <p>The practical trade-offs, in plain terms: proprietary frontier models give you the best out-of-the-box performance with the least operational overhead. Open-weight models give you cost control, data sovereignty, and fine-tuning capability, at the price of more engineering complexity. The emerging middle ground — where companies fine-tune open-weight foundations with proprietary training data — is where the Cursor/Kimi episode becomes instructive.</p>
+
+    <div class="section-break">The Cursor Incident</div>
+
+    <h3>When Open-Source Becomes Strategy: The Cursor/Kimi Affair</h3>
+
+    <p>In March 2026, Cursor — a US AI coding startup valued at $29.3 billion, reportedly exceeding $2 billion in annual revenue — launched a new model called Composer 2, marketing it as offering "frontier-level coding intelligence." Within days, a developer discovered that the model's internal identifier was "kimi-k2p5-rl-0317-s515-fast" — and that Composer 2 was substantially built on Kimi K2.5, an open-weight model developed by Moonshot AI, a Chinese company backed by Alibaba.</p>
+
+    <p>Cursor's vice president of developer education acknowledged the foundation: "Yep, Composer 2 started from an open-source base!" The co-founder later admitted it was "a miss to not mention the Kimi base in our blog from the start." The episode illuminates two things simultaneously. First, the raw economics: a US company valued at $29 billion found it more efficient to build on a Chinese open-source foundation than to train from scratch — because the open-source model was simply that good, and the additional reinforcement learning training needed was a fraction of the cost of training from scratch. Second, and more troubling: <mark>a company with $2 billion in annual revenue apparently did not have the governance infrastructure to track what model its own engineers were building on</mark>, let alone the licensing terms that model carried. The Kimi K2.5 licence required any commercial product exceeding $20 million monthly revenue to prominently display "Kimi K2.5" in its UI. Cursor surpassed that threshold by roughly eightfold.</p>
+
+    <p>Geoffrey Huntley's framing of open-source as economic warfare casts the Cursor incident in an even sharper light. If one nation-state's strategy is to release frontier-capable models for free or near-free — undercutting Western commercial labs' ability to generate returns — then the downstream consequence is that even the best-funded Western AI companies begin depending on that free infrastructure. The question of what happens to a country when the spigot gets turned off — through sanctions, through war, through licensing disputes — is not a paranoid thought experiment. It is the supply chain risk that keeps Jensen Huang awake at night, applied to software.</p>
+
+    <!-- ═══ SECTION 2: THE FALLING COST CURVE ═══ -->
+    <h2>II. The Falling Cost Curve and The Bitter Lesson</h2>
+
+    <h3>An Order of Magnitude Every Year</h3>
+
+    <p>Jensen Huang, CEO of NVIDIA, made one of the most economically significant statements of 2025 in his Lex Fridman interview: computer prices are going up, but token generation effectiveness is improving so fast that the unit cost of AI output is falling an order of magnitude — a factor of ten — every year.</p>
+
+    <blockquote class="pullquote">
+      "Our computer price is going up, but our token generation effectiveness is going up so much faster that token cost is coming down. It's just coming down an order of magnitude every year."
+      <cite>— Jensen Huang, Lex Fridman Podcast #494, 2025</cite>
+    </blockquote>
+
+    <p>To feel the weight of that claim: a task that cost $10 per hour in AI inference today will cost $1 per hour next year, $0.10 the year after, and $0.01 in three years. The physical infrastructure cost is rising because the hardware is more complex and more expensive. But NVIDIA's Blackwell architecture already delivers over 1,000 tokens per second per user — a 15x improvement over the previous generation — and the incoming Vera Rubin platform promises inference at one-tenth the cost per million tokens compared to Blackwell.</p>
+
+    <p>The mechanism is what Jensen calls "extreme co-design": rather than improving a single chip, NVIDIA is co-engineering every layer of the computing stack simultaneously — the GPU silicon, the memory (HBM4 delivering 22 TB/s of bandwidth), the network interconnects, the cooling, the power delivery, and the software. When every layer is optimised together, the gains compound multiplicatively rather than additively. A single Vera Rubin NVL72 rack contains around 1.5 million components from roughly 200 suppliers, all tuned to function as what Jensen calls "one giant computer."</p>
+
+    <h3>The Bitter Lesson and What It Predicts</h3>
+
+    <p>Richard Sutton's 2019 paper "The Bitter Lesson" — circulated widely in AI research circles and referenced explicitly by Steve Yegge in the context of his agent orchestration work — identified a pattern that has held across 70 years of AI research: every approach that encoded human knowledge and intuition into AI systems helped in the short term, then hit a ceiling. Every approach that simply scaled search and learning on raw compute demolished it.</p>
+
+    <p>The implication for the cost curve is direct: the scaling that is driving Jensen's 10x-per-year improvement is not a quirk of this particular hardware cycle. It reflects something deeper about how intelligence scales with computation. As Sutton put it, the lesson is bitter because it means the human knowledge we've spent careers accumulating is not the moat we thought it was. Systems that ignore human knowledge and simply search and learn at scale will outperform those that incorporate it — every time, eventually.</p>
+
+    <p>The research data confirms this at the aggregate level. AI training compute has scaled over 300,000x since 2012 — where Moore's Law would have delivered a 7x improvement over the same period, the AI industry delivered 300,000x through massive parallelisation, specialised hardware, and capital deployment. Algorithmic efficiency has independently improved at approximately 3x per year. The combined effect is an estimated 12–15x effective capability gain per year, compound.</p>
+
+    <div class="callout">
+      <p class="callout-label">Key Insight: The Recursive Loop</p>
+      <p>NVIDIA is now using Blackwell GPUs to accelerate the design of Vera, Rubin, and Feynman — the very chips that will succeed Blackwell. The hardware is designing its own successors. Huntley's agent loops do the same thing at the software layer: a Ralph loop that identifies a fault, fixes it, deploys the fix, and verifies the result — autonomously, overnight, without a human in the loop. The flywheel is already turning. The question is how fast it spins.</p>
+    </div>
+
+    <h3>The Compound Effect on the Cost Floor</h3>
+
+    <p>When Jensen's 10x/year cost reduction is applied to the $10.42/hour figure Huntley documented, the trajectory is staggering. The same software output that costs $10.42/hour today will cost approximately $1.04/hour in 2027, and $0.10/hour in 2028. At that point, the comparison is no longer with a burger flipper's wage. It is with the cost of electricity.</p>
+
+    <p>For the labour economics of countries like New Zealand, this trajectory has a concrete implication: every year that passes without a policy response, the gap between what AI costs to produce knowledge-work and what a human professional costs to produce knowledge-work widens by a factor of ten. The window for intervention — while the gap is still small enough that humans remain economically competitive in most domains — is measured in months, not parliamentary terms.</p>
+
+    <!-- ═══ SECTION 3: INFLATIONARY FORCES ═══ -->
+    <h2>III. Inflationary Forces: Gary's Economics and the Capital Trap</h2>
+
+    <p>Here is the paradox that Gary Stevenson's economic research illuminates: the same period in which AI is collapsing the cost of labour is also the period in which capital is becoming structurally more concentrated. These two forces do not cancel each other out. They compound.</p>
+
+    <p>Stevenson's central argument inverts the conventional economic narrative. Most economists say low interest rates push up asset prices. Stevenson says the causation runs the other way: extreme wealth concentration generates so much surplus capital — capital that cannot be spent because the ultra-wealthy physically cannot consume more — that it floods into existing assets, driving their prices up and the rate of return on new investment down. The mechanism is the differential marginal propensity to consume. Poor and working households spend virtually everything they earn, recycling it through the real economy. Ultra-wealthy households invest virtually everything they earn into assets — stocks, real estate, bonds — which inflates those assets without creating new economic activity.</p>
+
+    <p>The empirical evidence is brutal. Between 2014 and 2018, the combined assets of Elon Musk, Jeff Bezos, and Warren Buffett increased by more than $137 billion. Their income as recognised by the tax system in that period was $5.7 billion — roughly 4% of their actual economic gain. The Buy-Borrow-Die strategy — accumulate appreciating assets, borrow against them tax-free, pass them to heirs with the capital gains liability erased — means that extreme wealth generates returns that compound outside the tax base entirely.</p>
+
+    <p>AI does not solve this problem. It accelerates it. When the productivity gains from AI flow primarily to the owners of AI infrastructure — NVIDIA shareholders, hyperscaler shareholders, the IP holders of foundational models — and that ownership is concentrated in a small number of entities, mostly US-listed, mostly held by institutional investors and billionaires, then AI's gains get funnelled into exactly the same asset-accumulation loop that Gary's model describes. The capital from AI profits chases existing assets. Asset prices rise. Working people, who cannot participate in asset appreciation because they have no surplus to invest, face rising costs against stagnant wages, in a world where their professional skills are being repriced downward by the very system generating those asset gains.</p>
+
+    <blockquote class="pullquote">
+      "Wealth inequality causes low wages, high house prices, and a lack of jobs in certain industries — and it is self-reinforcing. Rich individuals save most of their income rather than spend it, which means their wealth doesn't circulate back into the economy."
+      <cite>— Gary Stevenson (Gary's Economics), core thesis</cite>
+    </blockquote>
+
+    <p>For New Zealand specifically, this has a structural dimension that is often missed. New Zealand has no broad capital gains tax, no wealth tax, and no digital services tax on AI platform revenues. Approximately $61.8 billion of the government's $121 billion tax base comes from PAYE — wages. If AI displaces enough wage-earning employment to reduce that figure meaningfully, the government faces a revenue shortfall that it has no automatic mechanism to replace, because the productivity gains that caused the displacement are flowing offshore to the shareholders of foreign-listed companies. NZ captures the disruption but not the gains.</p>
+
+    <!-- ═══ SECTION 4: THE HALO EFFECT ═══ -->
+    <h2>IV. A Necessary Caution: The Halo Effect</h2>
+
+    <p>Before proceeding to the political consequences, intellectual honesty requires naming the halo effect that distorts nearly every public conversation about AI economics.</p>
+
+    <p>The companies building this technology — Anthropic, OpenAI, NVIDIA, Google DeepMind — produce genuinely extraordinary results. The models work. The hardware is real. The productivity gains are real. And because these things are real, there is a powerful psychological tendency to assume that all claims made in the same breath are equally real: that AGI is imminent, that every benchmark reflects genuine progress, that the valuation multiples are justified, that the infrastructure spending will deliver the promised returns.</p>
+
+    <p>Jensen Huang is the world's most credible narrator of NVIDIA's story. He is also the CEO of the company whose valuation depends on people continuing to believe that compute scaling will go on indefinitely. When he claims token costs fall 10x per year, that claim deserves serious weight — but also serious scrutiny. NVIDIA has a direct financial interest in the narrative that compute investment has unlimited returns. The order backlog of $500 billion, the $275 billion data-centre backlog — these are real numbers, but they are also numbers that justify continued capital expenditure, which justifies continued chip demand, which justifies NVIDIA's valuation.</p>
+
+    <p>Similarly, the Cursor/Kimi episode is a useful corrective. A company valued at $29 billion, with the best AI engineers in the world, found it more economical to build on a Chinese open-source foundation than to develop from scratch — while simultaneously marketing that model as "frontier-level coding intelligence." The gap between the marketing narrative and the engineering reality is exactly the gap the halo effect creates. When a company produces a genuinely good product, the positive impression of that product spills over into assessments of its independence, its originality, its moat, and its valuation. All of those assessments may be wrong even when the product is right.</p>
+
+    <p>The structurally important question is not whether AI is advancing quickly. It is. The question is whether the productivity gains from that advancement will be distributed broadly enough to sustain the tax base, the social contract, and the democratic institutions of countries that are not building this technology. On that question, the optimism of the infrastructure providers is not evidence. It is marketing.</p>
+
+    <!-- ═══ SECTION 5: HUMANS AS SECOND CLASS ═══ -->
+    <h2>V. Humans as Second-Class Economic Participants</h2>
+
+    <h3>The Free Market Has Already Made Its Decision</h3>
+
+    <p>The framing of "AI replacing jobs" is, in one sense, too dramatic and too slow. AI is not firing people. It is more insidious than that. It is making the cost of not hiring people the economically rational choice. It is making the renewal offer $58,000 instead of $75,000, not because the employer is malicious, but because the marginal cost of the AI alternative has fallen below the salary premium the worker used to command. The market hasn't decided against humans. It has simply stopped needing them to be competitively priced.</p>
+
+    <p>Boris Cherny, who built Claude Code at Anthropic, is personally shipping 20–30 pull requests a day with parallel Claude instances. A prototype that used to take a week of engineering now takes hours. Steve Yegge's Gas Town framework coordinates as many parallel workers as needed to complete tasks — not metaphorical workers, but agent loops running concurrently. Michelle Lim's vision for Flint involves websites that rewrite themselves autonomously for SEO, A/B testing without human involvement, brand fidelity maintained by inference. These are not future-tense propositions. These are the working practices of people building in production, right now, in 2026.</p>
+
+    <blockquote class="inline-quote">
+      "Dude, you're going to get fired. And you're one of the best engineers I know." — Steve Yegge, to a skilled engineer still carefully reviewing AI code line by line. The implication: technical skill alone no longer insulates you.
+    </blockquote>
+
+    <p>Huntley's most important observation is not about cost. It is about the self-reinforcing dynamic. As model-first companies get better at automating their job functions, they can be at their previous employer's door in months. The ex-employee, having adopted AI deeply, becomes a lean competitor to the company that employed them. The company faces margin pressure from that competitor, which forces it to automate more aggressively, which reduces headcount, which produces more displaced workers who become the next wave of lean competitors. The snake is eating its tail, and the speed of revolution is accelerating.</p>
+
+    <h3>The Identity Collapse</h3>
+
+    <p>What Huntley describes, and what many in the technology industry are experiencing but few are naming publicly, is a form of identity collapse. For decades, the knowledge economy offered a clear bargain: invest years in developing a specialist expertise, and the market will price that expertise at a premium. Software engineer, financial analyst, paralegal, medical coder, content writer — these were not just jobs. They were identities. Career ladders. The basis of self-conception for millions of people who did everything the social contract told them to do.</p>
+
+    <p>AI does not just threaten those incomes. It threatens those identities. When an agent loop can produce in one night what took a week of engineering, the years of expertise that justified the engineer's premium are not being replaced — they are being devalued. The knowledge they accumulated is still real. It has not disappeared. But its economic value in a market where it can be replicated at $10.42 per hour has been radically compressed. The person who spent three decades building that knowledge has not become less intelligent or less skilled. They have simply become more expensive than the machine that approximates their output.</p>
+
+    <p>Huntley writes with genuine compassion about this. AI is being rammed into the world non-consensually. There are going to be people who spent years doing the social and political manoeuvring required to reach seniority within an organisation, and it will have been for nothing. That is not a small thing. It is the kind of loss — of identity, of status, of narrative meaning — that produces the political volatility Gary's economic research and the NZ political analysis both predict.</p>
+
+    <h3>The Imperfect Tool That Does Not Need to Be Perfect</h3>
+
+    <p>One of the most important things to understand about AI displacement is that the AI does not need to be perfect to be economically devastating. It needs to be good enough, cheap enough, and fast enough to change the employer's calculation.</p>
+
+    <p>A paralegal who earns $75,000 per year provides work that is accurate, contextually nuanced, and professionally accountable. An AI system that produces work that is 85% as accurate, cannot be held professionally accountable, and costs $3,000 per year in tokens is not a perfect replacement. But an employer who is facing margin pressure from a competitor using that AI system does not need a perfect replacement. They need a replacement that is adequate at a price that changes their cost structure. The bar is not perfection. The bar is "good enough to justify not renewing the contract at the existing salary." And that bar gets lower every time Jensen ships a new architecture.</p>
+
+    <p>The other dimension the "AI makes mistakes" objection misses is iteration. An agent loop that produces imperfect output can be re-run. It can be prompted differently. It can be corrected and re-executed. The cycle time for an AI correction is seconds. The cycle time for a human correction is days, plus salary. When Huntley talks about software as "clay on the pottery wheel" — something you throw back and reshape if it isn't right — he is describing a fundamentally different relationship to error than the one human professional services are built around. Perfection on the first pass is valuable when iteration is expensive. When iteration costs fractions of a cent, imperfection is irrelevant.</p>
+
+    <!-- ═══ SECTION 6: THE GEOPOLITICAL DIMENSION ═══ -->
+    <h2>VI. AI as Economic Warfare</h2>
+
+    <p>Huntley's most provocative framing is that Chinese open-source model releases may constitute deliberate economic warfare — the same strategic logic that Linux used against Windows in 1998, but deployed at the level of nation-states rather than companies. The mechanism is simple: by releasing frontier-capable models for free or near-free, a state actor can undermine the commercial viability of the Western AI labs whose products those models compete with. If Kimi K2.5 is good enough to be the foundation of a $29 billion US startup's flagship product, how much oxygen is left in the market for Anthropic or OpenAI to generate the returns that justify their capital requirements?</p>
+
+    <p>Huntley is explicit that he does not know whether this is intentional. What he observes is the structural similarity to documented historical patterns — the Halloween Papers, the Linux strategy — and the fact that the mechanism is identical even if the intent is disputed. For smaller countries like New Zealand, the geopolitical dimension of this creates a genuinely uncomfortable position: NZ's businesses depend on AI infrastructure they do not control, the primary providers of that infrastructure are engaged in something that looks increasingly like an adversarial geopolitical contest, and the question of what happens to NZ's economy if access to that infrastructure is disrupted — through sanctions, through conflict, through regulatory intervention — has no comfortable answer.</p>
+
+    <p>What Huntley calls the "trust question" is not really about the models. It is about the systemic dependency: when businesses automate their operations through AI, they hand operational control to an external entity. In a world where that entity is a US company operating under US law, one set of risks applies. In a world where that entity is a Chinese company operating under Chinese law, a different set applies. And in a world where a US company's flagship product is secretly built on a Chinese foundation, the distinction itself starts to blur.</p>
+
+    <!-- ═══ CLOSING STATEMENT ═══ -->
+    <div class="section-break">Conclusion</div>
+
+    <div class="closing-statement">
+      <p><strong>The social contract that built the modern economy was simple:</strong> human labour is scarce, skilled labour is more scarce, and the market will price that scarcity accordingly. Wages fund consumption. Consumption sustains demand. Demand sustains employment. The state captures a share of wages as tax, and uses that tax to provide public services that make the economy function.</p>
+
+      <p>AI is breaking the first link in that chain. <strong>The scarcity of skilled labour is being eliminated</strong>, not gradually but at a rate of an order of magnitude per year. The productivity gains that result are flowing primarily to the owners of the infrastructure — concentrated in a small number of US-listed companies, held by a small number of institutional investors and individuals, generating returns that compound outside the tax base through mechanisms Gary Stevenson describes in forensic detail.</p>
+
+      <p>Countries like New Zealand — whose fiscal architecture is almost entirely dependent on PAYE from wages, with no capital gains tax, no wealth tax, no digital services levy — are structurally exposed in a way that their policy frameworks have not begun to reckon with. The optimistic scenario is that new industries emerge to absorb the displaced professional class. The evidence suggests this is happening far more slowly than the displacement. The realistic scenario is progressive fiscal squeeze, growing inequality, and eventually political instability of the kind that Gary's research associates with democratic backsliding.</p>
+
+      <p><strong>The window for proactive policy response is measured in months.</strong> A government that acts in 2026 can frame AI policy as forward-looking. A government that acts in 2029 is responding to a crisis. The technology does not care about the political cycle. The compounding is already underway.</p>
+
+      <p>The bitter lesson, applied to political economy, is this: the general method that scales wins. AI scales. Human expertise does not. The question is not whether the transition happens — it is already happening. The question is whether the societies that did not build this technology will choose, deliberately and in time, to rewrite the social agreement before the market writes it for them.</p>
+    </div>
+
+  </div><!-- /article-body -->
+
+  <footer class="article-footer">
+    <p class="refs-heading">References &amp; Sources</p>
+    <p>
+      Geoffrey Huntley — <a href="https://ghuntley.com/real/">Software development now costs less than minimum wage</a> (Feb 2026) ·
+      Geoffrey Huntley — <a href="https://ghuntley.com/loop/">Everything is a ralph loop</a> (Jan 2026) ·
+      Geoffrey Huntley — <a href="https://ghuntley.com/warfare/">AI as economic warfare</a> (Mar 2026) ·
+      Jensen Huang / Lex Fridman — <a href="https://lexfridman.com/jensen-huang-transcript">NVIDIA Podcast Transcript, Ep. 494</a> ·
+      The Pragmatic Engineer — <a href="https://newsletter.pragmaticengineer.com/p/from-ides-to-ai-agents-with-steve">Steve Yegge: From IDEs to AI Agents</a> ·
+      The Pragmatic Engineer — <a href="https://newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny">Building Claude Code with Boris Cherny</a> ·
+      TechCrunch — <a href="https://techcrunch.com/2026/03/22/cursor-admits-its-new-coding-model-was-built-on-top-of-moonshot-ais-kimi/">Cursor admits Composer 2 built on Kimi</a> (Mar 2026) ·
+      TLDL — <a href="https://www.tldl.io/resources/llm-api-pricing-2026">LLM API Pricing March 2026</a> ·
+      Richard Sutton — <a href="https://www.cs.utexas.edu/~eunsol/courses/data/bitter_lesson.pdf">The Bitter Lesson</a> (2019) ·
+      Gary Stevenson (Gary's Economics) — Core thesis on wealth inequality and asset inflation ·
+      NZ Treasury / IRD — Crown Revenue 2024/25 data ·
+      Project files: AI Economic Effects for NZ, Jensen Huang transcript analysis, Gray Economics analyses
+    </p>
+    <p style="margin-top:1rem; color: #aaa;">
+      Prices verified March 2026 against official provider documentation. All pricing subject to change.
+      This essay is written for a personal blog and represents the author's synthesis and analysis of published sources.
+    </p>
+  </footer>
+
+</article>
+</body>
+</html>

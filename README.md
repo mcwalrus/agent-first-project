@@ -14,7 +14,7 @@ Read through the tutorial itinerary:
 | 3   | [Tech Stacks For Agents](./docs/TECH_STACK.md)            |
 | 4   | [Setup Claude Code](./docs/CLAUDE_SETUP.md)               |
 | 5   | [Beads Setup Guide](./docs/BEADS_SETUP.md)                |
-| 6   | [Choose Your First Project](./docs/first-project.md)      |
+| 6   | [Choose Your First Project](./docs/FIRST_PROJECT.md)      |
 | 7   | [Pick An Agent Framework](./docs/AGENT_FRAMEWORKS.md)     |
 | 8   | [What To Do Next](./docs/NEXT_STEPS.md)                   |
 | 9   | [Everything Is A Loop Now](./docs/AGENT_LOOP.md)          |
@@ -26,6 +26,6 @@ Read through the tutorial itinerary:
 
 This module is maintained by Max Collier under an MIT License Agreement.
 
-Please report any issues or feature requests to the [GitHub repository](https://github.com/mcwalrus/agent-first-project).
+Please report any issues or feature requests to the [GitHub repository](https://github.com/mcwalrus/agent-FIRST_PROJECT).
 
 Please contact me by email for personal requests.

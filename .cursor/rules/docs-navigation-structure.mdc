@@ -8,11 +8,11 @@ alwaysApply: false
 
 When editing `README.md` or files under `docs/`, preserve this canonical tutorial order:
 
-`INTRO -> GETTING_STARTED -> BACKPRESSURE -> TECH_STACK -> CLAUDE_SETUP -> BEADS_SETUP -> first-project -> AGENT_LOOP -> FINAL`
+`INTRO -> GETTING_STARTED -> BACKPRESSURE -> TECH_STACK -> CLAUDE_SETUP -> BEADS_SETUP -> FIRST_PROJECT -> AGENT_LOOP -> FINAL`
 
 Also preserve path guidance from `docs/READING_PATHS.md`:
 
-- Practical path: `INTRO -> GETTING_STARTED -> CLAUDE_SETUP -> BEADS_SETUP -> first-project -> NEXT_STEPS -> AGENT_LOOP`
+- Practical path: `INTRO -> GETTING_STARTED -> CLAUDE_SETUP -> BEADS_SETUP -> FIRST_PROJECT -> NEXT_STEPS -> AGENT_LOOP`
 - Technical path: `INTRO -> GETTING_STARTED -> BACKPRESSURE -> TECH_STACK -> CLAUDE_SETUP -> BEADS_SETUP -> AGENT_FRAMEWORKS`
 
 ## README Requirements

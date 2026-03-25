@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The New Contract — When Tokens Replace Labour</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=IBM+Plex+Mono:wght@300;400;500&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap');
+
+  :root {
+    --ink: #1a1612;
+    --paper: #f5f0e8;
+    --accent: #c8390a;
+    --mid: #6b5e4e;
+    --rule: #d4c9b5;
+    --highlight: #e8dfc8;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { font-size: 18px; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 300;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  /* Grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.6;
+  }
+
+  .page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 80px 32px 120px;
+  }
+
+  /* Header */
+  .masthead {
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+    padding: 20px 0 16px;
+    margin-bottom: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .blog-name {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--mid);
+  }
+
+  .issue-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--mid);
+    letter-spacing: 0.08em;
+  }
+
+  /* Kicker */
+  .kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  /* Title */
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--mid);
+    margin-bottom: 40px;
+    line-height: 1.5;
+  }
+
+  /* Byline */
+  .byline {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 32px;
+    margin-bottom: 48px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .byline-text {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--mid);
+    letter-spacing: 0.05em;
+  }
+
+  .byline-sep {
+    width: 40px;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* Body text */
+  p {
+    margin-bottom: 1.6em;
+    font-size: 1rem;
+    color: var(--ink);
+  }
+
+  p + p {
+    text-indent: 1.5em;
+  }
+
+  /* Section heads */
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 3em 0 0.8em;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  /* Pull quote */
+  .pull {
+    border-left: 3px solid var(--accent);
+    margin: 2.5em 0 2.5em -24px;
+    padding: 16px 24px;
+    background: var(--highlight);
+  }
+
+  .pull p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.18rem;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0;
+    text-indent: 0;
+  }
+
+  .pull cite {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-style: normal;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-top: 10px;
+  }
+
+  /* Monospace inline */
+  code {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82em;
+    background: var(--highlight);
+    padding: 1px 5px;
+    border-radius: 2px;
+    color: var(--accent);
+  }
+
+  /* Rule divider */
+  .section-rule {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 3.5em 0;
+  }
+
+  .section-rule::before,
+  .section-rule::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .section-rule span {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: var(--mid);
+    text-transform: uppercase;
+  }
+
+  /* Drop cap */
+  .dropcap::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.2em;
+    font-weight: 900;
+    float: left;
+    line-height: 0.82;
+    margin: 0.06em 0.08em 0 0;
+    color: var(--accent);
+  }
+
+  /* Footnote */
+  .footnote {
+    border-top: 1px solid var(--rule);
+    margin-top: 4em;
+    padding-top: 1.5em;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--mid);
+    letter-spacing: 0.04em;
+    line-height: 1.7;
+  }
+
+  /* Fade-in animation */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .page > * {
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .masthead  { animation-delay: 0.05s; }
+  .kicker    { animation-delay: 0.15s; }
+  h1         { animation-delay: 0.22s; }
+  .subtitle  { animation-delay: 0.30s; }
+  .byline    { animation-delay: 0.36s; }
+
+  /* Responsive */
+  @media (max-width: 520px) {
+    .page { padding: 48px 20px 80px; }
+    .pull { margin-left: -8px; }
+  }
+</style>
+</head>
+<body>
+<article class="page">
+
+  <header class="masthead">
+    <span class="blog-name">Personal Blog</span>
+    <span class="issue-date">March 2026</span>
+  </header>
+
+  <div class="kicker">Essay · Economics · Labour</div>
+
+  <h1>The New<br><em>Contract</em></h1>
+  <p class="subtitle">When datacentres become the infrastructure of empire, and tokens become the unit of work, what is left for human hands to claim?</p>
+
+  <div class="byline">
+    <span class="byline-text">~1,200 words</span>
+    <div class="byline-sep"></div>
+    <span class="byline-text">Western Economies</span>
+    <div class="byline-sep"></div>
+    <span class="byline-text">Personal Reflection</span>
+  </div>
+
+  <p class="dropcap">Money is not a thing. It is a promise — a collectively agreed-upon ledger entry that records work done and defers its reward. For as long as modern economies have existed, that promise rested on a foundational assumption so basic it was never questioned: that human skill and human effort are the scarce inputs that productive societies compete to acquire. When you accepted a salary, you were accepting the market's current valuation of your time. When you spent it, you made a claim on someone else's. The whole system was a distributed ledger of human attention.</p>
+
+  <p>That assumption is being voided. Not renegotiated — voided. And the mechanism doing the voiding is not a policy decision or a corporate strategy. It is arithmetic.</p>
+
+  <p>In February 2026, Geoffrey Huntley — a software engineer who spent the previous year running autonomous agent loops and publishing his costs — documented that software development had fallen below the hourly wage of a minimum wage worker. His own billing data showed a per-hour equivalent of USD $10.42 for software production that previously required a team. He asked the question plainly: what does it mean to be a software developer when everyone in the world can develop software? He did not frame it as a hypothetical. He read it off a dashboard.</p>
+
+  <p>The USD $10.42 figure is not a benchmark. It is a practitioner's invoice. The number is already falling. Jensen Huang, whose company manufactures the hardware that makes those agent loops possible, said plainly in late 2025 that token generation costs are dropping an order of magnitude every year. What costs USD $10.42 today costs USD $1.04 in 2027. The year after that, you are comparing the cost of knowledge work to the cost of electricity.</p>
+
+  <div class="section-rule"><span>I</span></div>
+
+  <h2>Infrastructure as Empire</h2>
+
+  <p>In agrarian economies, land was the scarce productive input. Whoever controlled it captured the surplus — the grain, the livestock, the rent. In industrial economies, capital machinery took that role. In the knowledge economy, the scarce input was skilled human attention: the lawyer who understood the clause, the engineer who saw the bug, the analyst who read the signal in the noise.</p>
+
+  <p>AI has made skilled human attention abundant. It has done so by concentrating the means of cognitive production into physical infrastructure — racks of GPUs, high-bandwidth memory, fibre interconnects — that can generate, in one night, what a team of professionals previously produced in a week. The datacentre is not analogous to a factory. It is closer to a factory that can also design and build its own successors. NVIDIA is already using its current Blackwell GPUs to accelerate the design of the chips that will replace them. The hardware is writing its own next chapter. The flywheel is already turning.</p>
+
+  <p>Empires have always been defined by the infrastructure they control — roads, ports, shipping lanes, telegraph cables. The question of what happens to physical land in a world where the dominant productive infrastructure is computational is not merely rhetorical. If the economic logic of territory is that it grants control over productive capacity, and productive capacity is increasingly located in datacentres and model weights rather than soil and mineral rights, then land's political meaning begins to shift. It does not disappear. But its value becomes increasingly derivative of whether the infrastructure built above it is pointed at you or pointed away. A datacentre on your sovereign territory is an asset. A datacentre owned by a foreign entity, operating under foreign law, processing your economy's cognitive work — that is something closer to a tributary relationship. The enclosure has already happened. Most of us simply have not received the notice.</p>
+
+  <div class="section-rule"><span>II</span></div>
+
+  <h2>Tokens as the New Unit of Work</h2>
+
+  <p>A token — roughly three-quarters of a word, the basic unit of AI inference — is measurable, scarce in aggregate, bounded by compute capacity and energy, and directly productive of economic output. The contract drafted, the code shipped, the analysis synthesised: all of these are downstream of token generation. In the old economy, human attention was the input that produced those outputs. Tokens have replaced it as the unit of work.</p>
+
+  <p>Ryan Carson — builder, and one of the people thinking carefully about the infrastructure layer this transition runs on — put the observation plainly: if tokens are now doing the work that wages used to reward, then money loses its grounding in scarcity. Currency was always a proxy for something real — the deferred claim on another human's effort. When the effort is no longer primarily human, the proxy starts to refer to something that no longer dominates production. It does not disappear overnight. But it begins to function the way gold certificates functioned after Bretton Woods: a legacy interface layer, maintained for political continuity, between an economy that has already moved on and the institutions that have not yet caught up.</p>
+
+  <p>What follows from that observation is a question of access, governance, and distribution. The productive capacity that tokens represent is not shared equally — it is owned by a small number of technology companies, largely US-listed, whose shareholders are predominantly institutional investors and the ultra-wealthy. The gap between tech-native companies that have embedded this infrastructure into their operations and non-tech companies still running on human labour is not a skills gap. It is a capital access gap, and it is widening at the rate tokens are falling in cost. The firms that control the inference layer — and the governments that tax or fail to tax them — will determine who captures the value of this transition. That is not a technical question. It is a political one, and so far most governments are not treating it as such.</p>
+
+  <div class="section-rule"><span>III</span></div>
+
+  <h2>Physical Labour and the Downstream Effect</h2>
+
+  <p>The standard reassurance is that physical labour is insulated. Plumbers, electricians, aged care workers, builders — these roles require embodied presence, sensory judgement, dexterity that machines cannot yet replicate reliably. This is broadly true for the next five years. It is dangerously incomplete as a longer-term account.</p>
+
+  <p>Physical labour does not exist in isolation. It exists inside an economy, and its wages are sustained by the income of the people paying for the services. The professional middle class — lawyers, accountants, software engineers, analysts — are the primary consumers of discretionary physical work. If AI compresses those professional incomes significantly, the demand base for physical labour contracts before a single robot has turned a single bolt. The tradesperson does not lose their job to AI directly. They lose it because the person who used to hire them can no longer afford to, or because the business that employed them has lost its client base to an AI-native competitor operating at a fraction of the cost structure.</p>
+
+  <p>This is the indirect displacement effect that almost never appears in automation statistics. It is quieter, slower, and far harder to attribute. But it is already operating through the same mechanism that Gary Stevenson's economic research identifies in the inequality spiral: the gains compound upward, the costs diffuse downward, and the institutions built to redistribute between those two directions are moving at the pace of parliamentary terms in a disruption measured in months.</p>
+
+  <div class="section-rule"><span>IV</span></div>
+
+  <h2>After the Ledger</h2>
+
+  <p>What is actually eroding is not money itself. It is the social agreement that money was measuring. The agreement that work is rewarded. That effort has market value. That the state captures a share of production through wages and redistributes it as services. All of these assumptions are downstream of the one that is now breaking: that human labour is the primary input to productive economies.</p>
+
+  <p>When token generation becomes the dominant productive activity of an economy, the entire architecture built around taxing wages and spending into social services loses its referent. New Zealand's government collects $61.8 billion in PAYE from wages. It collects almost nothing from the productivity gains of AI inference, because those gains flow offshore to the shareholders of US-listed infrastructure companies through mechanisms — unrealised capital gains, borrowed-against appreciation, inherited stepped-up basis — that the tax system was not designed to reach.</p>
+
+  <p>The new contract is not yet written. What is visible is the dissolution of the old one. The infrastructure of cognitive production has been concentrated into the hands of a few. The unit of work has shifted from the hour a human spends to the token a machine generates. Money persists, but increasingly as a settlement layer for transactions whose real value was created and captured before any human was involved.</p>
+
+  <p>The closing argument is not pessimistic. It is structural. Every major transition in what constitutes productive capacity — from land to machinery, from machinery to information — has eventually produced new governance frameworks that redistributed the gains broadly enough to sustain social cohesion. The question is whether those frameworks arrive before or after the damage is embedded. The market is not waiting. It is pricing human cognitive labour at USD $10.42 an hour and falling. The societies that treat this as a future problem will find, when they finally look up, that the future already arrived — and wrote the contract without them.</p>
+
+  <div class="footnote">
+    References: Geoffrey Huntley — ghuntley.com/real (Feb 2026); ghuntley.com/loop; ghuntley.com/warfare ·
+    Jensen Huang / Lex Fridman — Podcast #494 (2025) · Gary Stevenson — Gary's Economics, core thesis on
+    wealth inequality · NZ Treasury Crown Revenue 2024/25 · The Pragmatic Engineer — Steve Yegge, Boris
+    Cherny interviews · Richard Sutton — The Bitter Lesson (2019) ·
+    Personal correspondence with Ryan, March 2026.
+  </div>
+
+</article>
+</body>
+</html>

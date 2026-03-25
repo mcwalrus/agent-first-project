@@ -18,6 +18,6 @@ Once you finish the main tutorial flow, use these references to keep learning an
 
 _Next: [Everything Is A Loop Now](./AGENT_LOOP.md)_
 
-_See also: [Your First Project](./first-project.md) · [Reading Paths](./READING_PATHS.md)_
+_See also: [Your First Project](./FIRST_PROJECT.md) · [Reading Paths](./READING_PATHS.md)_
 
 [← Back to README](../README.md)

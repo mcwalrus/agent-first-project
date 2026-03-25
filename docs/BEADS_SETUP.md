@@ -187,7 +187,7 @@ bd doctor --fix
 
 ---
 
-_Next (Practical): [Your First Project](./first-project.md)_
+_Next (Practical): [Your First Project](./FIRST_PROJECT.md)_
 
 _Next (Technical): [Agent Frameworks](./AGENT_FRAMEWORKS.md)_
 
