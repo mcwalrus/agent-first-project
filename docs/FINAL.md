@@ -82,6 +82,6 @@ The best move from here is to use it. You don't need to master everything at onc
 
 ---
 
-_See also: [Everything Is a Loop Now](./AGENT_LOOP.md) · [What To Do Next](./NEXT_STEPS.md)_
+_See also: [Everything Is a Loop Now](./AGENT_LOOP.md) · [Choose Your First Project](./FIRST_PROJECT.md)_
 
 [← Back to README](../README.md)

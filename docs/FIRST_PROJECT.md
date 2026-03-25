@@ -64,10 +64,10 @@ The feedback cycle might be faster and the surface area for failure is different
 
 ---
 
-_Next (Practical): [What To Do Next](./NEXT_STEPS.md)_
+_Next (Practical): [Pick An Agent Framework](./AGENT_FRAMEWORKS.md)_
 
 _Next (Technical): [Everything Is A Loop Now](./AGENT_LOOP.md)_
 
-_See also: [Understanding Your Backpressure](./BACKPRESSURE.md) · [Reading Paths](./READING_PATHS.md)_
+_See also: [Understanding Your Backpressure](./BACKPRESSURE.md)_
 
 [← Back to README](../README.md)

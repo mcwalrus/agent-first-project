@@ -33,6 +33,6 @@ _Next (Practical): [Getting Started](./GETTING_STARTED.md)_
 
 _Next (Technical): [Understanding Your Backpressure](./BACKPRESSURE.md)_
 
-_See also: [Setup Claude Code](./CLAUDE_SETUP.md) · [Reading Paths](./READING_PATHS.md)_
+_See also: [Setup Claude Code](./CLAUDE_SETUP.md)_
 
 [← Back to README](../README.md)

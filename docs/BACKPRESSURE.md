@@ -46,6 +46,6 @@ _Next (Technical): [Tech Stacks For Agents](./TECH_STACK.md)_
 
 _Next (Practical): [Setup Claude Code](./CLAUDE_SETUP.md)_
 
-_See also: [Introduction](./INTRO.md) · [Reading Paths](./READING_PATHS.md)_
+_See also: [Introduction](./INTRO.md)_
 
 [← Back to README](../README.md)

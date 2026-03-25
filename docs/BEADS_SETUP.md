@@ -191,6 +191,6 @@ _Next (Practical): [Your First Project](./FIRST_PROJECT.md)_
 
 _Next (Technical): [Agent Frameworks](./AGENT_FRAMEWORKS.md)_
 
-_See also: [Setup Claude Code](./CLAUDE_SETUP.md) · [Tech Stacks For Agents](./TECH_STACK.md) · [Reading Paths](./READING_PATHS.md)_
+_See also: [Setup Claude Code](./CLAUDE_SETUP.md) · [Tech Stacks For Agents](./TECH_STACK.md)_
 
 [← Back to README](../README.md)
