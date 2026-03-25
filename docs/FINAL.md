@@ -1,154 +1,87 @@
-# AI and the Economics of Western Displacement
+# Final Notes
 
-_A personal essay on what the numbers actually mean — Max, co-authored with Claude_
+You've made it through the technical material. What follows isn't more tutorial. It's the context I think you deserve to have before you go and use any of this.
 
----
+## What You've Just Learned to Do
 
-## The Cost Floor Has Collapsed
+Running agents in loops is now the cheapest way to produce software on the planet — cheaper, per unit of output, than minimum wage labour in any Western country. That cost is likely to keep falling too. Jensen Huang has said publicly that token costs are dropping an order of magnitude per year. Whether you believe that precisely or not, the direction is not in dispute. Prove it to yourself on a real task. Once you have, you won't need anyone to explain the implications to you.
 
-Software development now costs less per hour than a minimum wage burger flipper. That sentence sounds like hyperbole. It isn't. And if you follow the chain of consequences from that single fact — through the economics of compute, through compounding model improvements, through the structural vulnerabilities of wage-dependent tax systems in countries like New Zealand — what emerges is not a story about technology. It's a story about who captures the gains when human labour stops being the cheapest way to solve problems.
+## What This Changes About Your Role
 
-This essay makes three claims, in order of what can be demonstrated empirically, what can be reasoned from evidence, and what remains open speculation. I'll be explicit about which is which.
+This tutorial has covered one specific practice: using AI to build software through agentic techniques of agent loops and autonomous harnesses. This is only a narrow slice of what's available to you now. Before you reach for agent loops and code, there's a lot you can accomplish with simpler tools.
 
----
+I've spent roughly 80% of my own time recently in **Claude Chat** and **Cowork**. Conversations, long-form thinking, testing economic arguments, applying critical scrutiny to ideas I'm developing. The code and automation side matters, but don't mistake it for the whole picture. Start where you're most comfortable and stretch from there.
 
-## What Is Demonstrably True — The Cost Floor
+What this shift in tooling really demands is **lateral thinking** — knowing not just what the right problem is, but knowing which of a thousand possible approaches that are now available to you. AI is extraordinarily good at helping you find those shortcuts if you're willing to explore. The engineers who thrive aren't necessarily the ones writing the most sophisticated prompts. They're the ones who have developed an intuition for what to ask, and let your curiousity follow.
 
-### Software development at below-minimum-wage costs
+Steve Yegge describes vibe coding as genuinely fun. He even wrote a book on it. I tend to agree as well. There's a particular satisfaction in discovering a new world of possiblity. I now live in a different world to everyone that I know. The world has changed. It is upside down and inside out. It's science fiction really. Let's try and implement the societal guardrails for which we can steer things back towards the right direction. Try and provide the positive influence in the world that you want to see.
 
-Geoffrey Huntley, a practitioner who has been running agent loops in production, documented in February 2026 that the cost of software development via AI agent loops had fallen to approximately **$10.42 per hour** — below minimum wage in Australia, the UK, New Zealand, and most of the developed world. This is not a theoretical projection. It is a cost that can be reproduced by anyone with an API key and a structured prompt.
+## The Broader Picture
 
-The mechanism is straightforward: large language models accessed via API, run in continuous loops against a product specification, produce working software at a rate that makes them cheaper per output unit than any human employee — including the cheapest labour markets in the world. Huntley describes this as "the discovery of Ralph," a pattern of autonomous agent iteration that has since gone viral in developer communities. [The Register covered the phenomenon in January 2026.](https://www.theregister.com/2026/01/27/ralph_wiggum_claude_loops/)
+AI is not going away either. We are not in an 'AI bubble'. We are in an 'economic bubble that is caused due to inflationary pressures of AI'. That's a completely different thing. It is a successful bet that is paying off in productive output, and the returns are compounding. That's part should be easy for anyone to accept for anyone who has figured out how to use it properly.
 
-The current market pricing confirms the floor is real and still falling. As of March 2026:
+The harder part is for what it means for Western economies going foward? The productivity gains from AI are real, but who captures them is political. We are losing that argument by default and design at the moment. When AI agents will eventually replace human labour, the economic gains will flow to equity holders, not to wages. Most Western tax systems are built almost entirely around taxing labour through salaries. New Zealand is an extreme example of this: the government collects the majority of its revenue through income tax on earnings, with no broad capital gains tax implement. We are suffering right now in our own stupidity.
 
-| Model                 | Input (per 1M tokens) | Output (per 1M tokens) | Notes                                  |
-| --------------------- | --------------------- | ---------------------- | -------------------------------------- |
-| DeepSeek V4           | $0.30                 | $0.50                  | Frontier-level. Cache hits: $0.03/M    |
-| DeepSeek V3.2         | $0.28                 | $0.42                  | Budget workhorse. Cache hits: $0.028/M |
-| Claude Sonnet 4.6     | $3.00                 | $15.00                 | Strong instruction-following           |
-| Claude Haiku 4.5      | $0.25                 | $1.25                  | Budget Claude option                   |
-| Claude Opus 4.6       | $5.00                 | $25.00                 | Highest reasoning tier                 |
-| GPT-5.2               | $1.75                 | $14.00                 | OpenAI flagship                        |
-| GPT-5                 | $1.25                 | $10.00                 | Standard tier                          |
-| Gemini 2.5 Pro        | $1.25                 | $10.00                 | Google flagship                        |
-| Gemini 2.0 Flash-Lite | $0.075                | $0.30                  | Cheapest mainstream option             |
-| Grok 4.1              | $0.20                 | $0.50                  | xAI; 2M context window                 |
+When will the productive output of an economy stops flowing through our wages? From everything I have seen, we might need to start dealing with this question sooner than expected. This is not abstract either. It is already showing up in hiring freezes, wage compression, and the quiet erosion of entry-level roles. The disruption has arrived through continual waves of visible layoffs. The technology market from hyperscalers saw 150,000 roles redundant within the past year. What will the growing trend be to the rest of our economies by the end of next year?
 
-_Sources: Official provider documentation, TLDL.io API pricing tracker, March 2026_
+What I'm arguing is that we need a political conversation about how Western societies share resources during this period of transition. Our current economic frameworks were not designed for a world where the most productive input to an economy is not human labour. The theories that shape current policy — from both isles of the political spectrum — are lagging badly behind what is already happening in practice. Shifting that conversation, particularly for those who reason from traditional economic models, is something I where I am personally heading on for this journey.
 
-The relevant comparison for economic impact is not between models but between the cheapest effective model — currently DeepSeek V4 at cached rates approaching **$0.03/M input tokens** — and human labour. A developer producing 1,000 tokens of output per minute (a reasonable estimate for code review, documentation, or basic feature work) would cost fractions of a cent per minute in AI inference. The same task in human labour costs $30–80 per hour in a Western economy.
-
-### Proprietary vs. open-source: the trade-off that changes the geopolitics
-
-The pricing table above obscures something important. The choice between providers is not purely about cost — it is about sovereignty, privacy, and strategic dependency.
-
-**Proprietary frontier models** (Claude, GPT, Gemini) offer the highest reliability, safety-tuning, and legal accountability. They are built by US companies under US law with established enterprise data protection policies. The trade-off is cost and lock-in: the highest-capability tiers are expensive, and your organisation's data passes through infrastructure controlled by a handful of US corporations.
-
-**Open-source and Chinese frontier models** (DeepSeek, Kimi/Moonshot AI) offer dramatically lower costs, and in the case of open weights, full local inference with no data leaving your infrastructure. The trade-off is a less-understood provenance. DeepSeek V4 at $0.30/M is approximately 94% cheaper than Claude Opus 4.6, and for many coding tasks performs comparably on benchmarks. For organisations operating sensitive workloads in regulated industries, however, routing that data through Chinese-operated infrastructure raises questions that pure cost analysis doesn't resolve.
-
-**Local inference** — running open-weight models on your own hardware — eliminates both the cost and the sovereignty concern, but introduces a new constraint: compute. Running a competitive frontier-grade model locally currently requires hardware investments that make sense at scale but are prohibitive for small organisations.
-
-The Cursor Composer 2 episode in March 2026 crystallised this tension sharply. Cursor — a US startup valued at $29.3 billion — launched a coding model it marketed as its own frontier capability, without disclosing that it was built on Kimi K2.5, an open-source model from Moonshot AI, a Chinese company backed by Alibaba. The omission was only acknowledged after a developer identified an internal model ID string that identified Kimi as the underlying system. Cursor co-founder Aman Sanger later called it "a miss to not mention the Kimi base in our blog from the start."
-
-The episode is instructive beyond its immediate embarrassment. As one developer observed on X, "Cursor is becoming a model routing layer, not an IDE. They pick the cheapest model that clears a quality bar per task, wrap it in their UX, and pocket the margin." At a $29.3 billion valuation, that is an enormous amount of market capitalisation resting on a UI layer and fine-tuning pass applied on top of a foreign open-source base model. The halo effect — using a strong product impression to sustain a valuation built on less durable foundations — deserves scrutiny here. The same scrutiny applies more broadly to AI companies that market proprietary capability while quietly relying on open-source, often Chinese-origin, base weights.
+If countries like New Zealand doesn't find a way to share in the rewards of AI — if the gains remain captured by a small class of technology elites while ordinary people absorb the costs — we are heading toward conditions that historically precede social breakdown. Objections and an eventual overthrow to power. I don't think any of us want to live in George Orwell's visionary world of 1984 either. Access and governance to model access needs to be a forwardly pressured converstaion of political debate between our nation's leaders and foriegn ministers. It would benefit everyone better if we can learn to agree on things. Please, call me insanse here but I would like to stay optimistic.
 
 ---
 
-## Part Two: What Can Be Reasoned From Evidence — The Acceleration
+## Identity Loss
 
-### Jensen Huang's engineering roadmap confirms the trajectory
+For anyone in skilled work or otherwise, there is a specific kind of grievance of loss that comes with understanding what AI can now do. It's not just the economic threat. There is a real case that it will hurt your identity too.
 
-The cost floor is not a fixed line. Jensen Huang, NVIDIA's CEO, stated in his Lex Fridman interview that token generation cost is "coming down an order of magnitude every year." He has a direct financial incentive to say this, and the claim should be treated with appropriate scepticism — not dismissed, but stress-tested.
+Many people across skilled labour industries have done everything right. They invested years building expertise. They earned their seniority through genuine effort and skill. They staked a real part of their self-conception on being good at something that took time to become good at. AI doesn't make that expertise worthless. But it does compress its market value in ways that can feel, in real expriences, like grief.
 
-What is not in dispute is the directional trend. NVIDIA's Vera Rubin architecture, entering production in H2 2026, delivers AI inference at one-tenth the cost per million tokens compared to the previous Blackwell generation. Even at a conservative 3–5x annual improvement — well below Huang's claimed 10x — the cumulative effect over three years is a 27x to 125x reduction in inference cost from today's already low baseline.
+You need to know that this will be an appropriate response. I've spoken to people who have struggled with this who aren't struggling because they're not adapting. I also had struggled significantly with this myself in part. We are partly meant to struggle through the loss of security and even status. Try look to recognise we are all in this boat together, and that we should hope that as a collective this may ultimately bring us together. Through an appeal in our collective humanity - our care of concern for one another or our families - I hope we can draw towards the right outcome.
 
-The economic implication is not simply that AI gets cheaper. It is that **the cost threshold for replacing a human worker falls to reach progressively higher-value and more complex tasks each year**. What costs $10.42/hour of AI inference today costs $1–3/hour by 2028 under conservative assumptions. That arithmetic begins to reach not just software developers but legal associates, financial analysts, junior doctors, and the administrative professional class that forms the backbone of a PAYE tax system.
+So if this is where you are now, know that you are not alone. It's not permanent. But it does need to be identified first before you can move through. Reach out to someone. The best thing you can do, once you've absorbed it, is tap the next person on the shoulder on what's happening so we can all learn how to deal with it together.
 
-### The Bitter Lesson and why scaling wins
+## Closing Argument: Invest in Yourself Now
 
-Richard Sutton's 2019 essay _The Bitter Lesson_ — referenced by Steve Yegge in his Pragmatic Engineer interview and cited in the earlier conversation with Jensen Huang — makes a claim that has aged remarkably well: the biggest lesson from 70 years of AI research is that **general methods leveraging computation consistently outperform human-designed knowledge systems** over time.
+The most useful thing I can tell you is this — invest in yourself. Spend time with the technology. Understand it through your own use, at whatever pace fits your capacity. You don't need to master everything at once. You need to develop a working intuition for what's possible, and that only comes from doing.
 
-The pattern has repeated across chess, Go, speech recognition, computer vision, and now coding. In every domain, researchers tried to encode human expertise into AI systems. It worked in the short term. Then brute-force computation at scale, applied to search and learning, demolished every human-crafted approach.
+On the financial side I suggest you hold enough to manage your expenses well through this transition period. The economic environment is genuinely uncertain, whilst global tensions have been rising. I also believe AI is a key significant driver of this tension. Politicans are yet to draw this as name yet. This is not a normal moment to be preparing for decade-long plans. Stay agile.
 
-This matters for the economic argument because it directly undermines the most common rebuttal to displacement concerns: that human expertise is irreplaceable. Sutton's observation is that this has been the claim made in every previous domain AI has entered, and it has been wrong every time. The doctors, lawyers, and analysts who argue their domain requires human judgment are making the same argument the chess grandmasters made before 1997.
+AI is also low cost and high reward. Again as Steve Yegge put it, really fun once you start to understand what's out there. You'll find yourself doing things you didn't think were accessible to you. You'll solve problems that previously required a team. You'll problem solve quicker and much faster than you expected. Eventually you can solve problems which you never thought was possible. Experiment at your own limits.
 
-Scaling in the current generation operates through several compounding mechanisms simultaneously. Raw compute investment by hyperscalers — Microsoft at $80 billion, Amazon exceeding $100 billion, Google at $75 billion for 2025 alone — continues to dwarf anything that was previously spent. Algorithmic efficiency improves at approximately 3x per year independently of hardware. Inference-time scaling allows models to "think longer" on hard problems. Context windows have expanded from tens of thousands to millions of tokens, enabling models to reason across entire codebases, entire legal case files, entire medical histories in a single pass.
+My own goal through all of this artifact, the writing, the economic arguments, the theory work — is to make sure that people are protected during a time of genuine uncertainty, and that New Zealand claims its fair share of what this era is producing. Not just as a consumer of AI tools, but as a country that deserves to be a beneficiary from the transformation. That case needs to be made clearly and properly. Otherwise... we are in for a world of shit.
 
-The combined effect — estimated at 12–15x effective capability gain per year when compute and algorithmic improvements are taken together — has no historical precedent in a technology affecting cognitive work.
+There are still roles in software. There are still projects well within your capacity that are worth taking on. The argument for where I stand is that we figure this out together — that we make sure people aren't left behind while we sort through what comes next. It's an open question. I'll keep asking it until I find a proper answer.
 
-### The flywheel: AI designing its own successors
-
-Perhaps the most consequential dynamic is one that receives the least public attention. NVIDIA is currently using its Blackwell GPU cluster to accelerate the design of Vera, Rubin, and Feynman — the next three generations of its own AI hardware. The models accelerating their own hardware development are the same models that will run on that hardware, which will accelerate the next generation of models.
-
-This is not metaphor. It is a documented engineering practice. And its implication is that the improvement curve is not driven only by human researchers and engineers — it increasingly drives itself. Boris Cherny, who built Claude Code at Anthropic, is personally shipping 20–30 PRs per day using parallel Claude instances. The engineers building the tools that build AI are themselves using AI to build those tools faster.
-
----
-
-## Part Three: The Economic Consequences — Where Gary Stevenson's Model Meets the AI Transition
-
-### The mechanism: productivity gains without wage transmission
-
-Gary Stevenson's economic thesis — documented in his academic work and public writing — identifies wealth concentration as a cause, not merely a consequence, of the current economic malaise. The engine is the differential marginal propensity to consume: ordinary households spend nearly everything they earn, recycling it through the real economy; ultra-wealthy households save and reinvest the majority, bidding up existing assets rather than creating new productive capacity.
-
-AI does not merely operate within this dynamic. It turbochargies it.
-
-When a company replaces a human employee with an AI agent, the productivity gain accrues to the company's equity holders. In most Western countries, this means it accrues to shareholders — disproportionately wealthy individuals, and in the case of AI infrastructure companies, primarily American ones. The revenue that previously paid wages (and generated PAYE tax receipts) now becomes profit that flows to capital. Under Stevenson's model, that capital doesn't get spent — it gets reinvested into more assets, bidding prices higher and suppressing the wage-consumption loop that sustains democratic welfare states.
-
-For New Zealand, the structural vulnerability is acute. PAYE — income tax from wages and salaries — accounts for $61.8 billion of New Zealand's $121.1 billion total tax revenue. There is no broad capital gains tax. When AI productivity gains flow to equity holders rather than wage earners, the government captures almost none of that value through its existing tax architecture.
-
-The compounding problem has three layers. First, displacement reduces PAYE directly through job losses and wage compression. Second, reduced wages reduce GST receipts through reduced consumer spending. Third, the productivity gains that should theoretically expand the tax base instead flow offshore to shareholders in US technology companies — outside the New Zealand tax jurisdiction entirely.
-
-### The near-term timeline: hiring freezes before unemployment
-
-The mechanism of near-term damage is quieter and harder to see than outright layoffs. An IDC survey found 34% of New Zealand companies had already slowed entry-level hiring in 2025, with 88% expecting to do so within three years. Roles are not being eliminated — they are simply not being backfilled when employees leave.
-
-The wage compression dynamic identified in the earlier analysis is already operating. When an employer knows that an AI can perform 40–60% of a knowledge worker's tasks, their willingness to pay at renewal decreases before anyone loses their job. The tax base shrinks not through visible unemployment but through lower wages on the same nominal headcount.
-
-Under the conservative displacement scenario — 10% net displacement by 2035 — the cumulative PAYE erosion over two years is approximately $3.1 billion. Under the moderate scenario — 20% displacement by 2040 — the two-year figure approaches $6.8 billion, against a government already running a $13.7 billion structural deficit with net core Crown debt at $182.2 billion (41.8% of GDP).
-
----
-
-## Part Four: The Halo Effect — What Requires Scrutiny
-
-The AI industry's marketing deserves the same scepticism applied to any sector where valuations are built significantly on narrative rather than current cash flow.
-
-Several specific patterns warrant attention:
-
-**Performance benchmark inflation.** Benchmarks like SWE-bench and MMLU are increasingly saturated — meaning models are being fine-tuned specifically to perform well on the tests used to justify pricing and capability claims. Cursor Composer 2 claiming to outperform Claude Opus 4.6 on coding benchmarks while being built on a model Cursor didn't initially disclose is a case study in how benchmark leadership can be constructed rather than organically achieved.
-
-**Valuation multiples detached from unit economics.** Cursor at $29.3 billion is, on one reading, a UI layer and fine-tuning pass on top of open-source models that compete with each other on sub-dollar-per-million-token pricing. The halo effect of "AI coding assistant" sustains a valuation that the underlying unit economics, scrutinised carefully, might not support. Jensen Huang's claim of 10x annual token cost reduction — if sustained — implies that the software layer capturing margin on top of commodity model inference is the most structurally fragile part of the AI value chain.
-
-**Capital expenditure as proof of confidence.** The $320 billion in infrastructure spending committed by major hyperscalers for 2025 is frequently cited as evidence that AI is not a bubble. It is evidence that major corporations believe it isn't a bubble. These are not the same thing. The companies making these commitments have a structural interest in the narrative being true, and sunk cost dynamics mean they will continue to promote that narrative regardless of early evidence. This does not mean AI is a bubble — the productivity case is real — but the scale of capital deployment should be read as a risk indicator as much as a confidence signal.
-
----
-
-## Part Five: What Remains Open — The Civilisational Questions
-
-These are questions I cannot answer, and I want to be transparent that they are speculative.
-
-The social contract of money — the idea that currency represents work done, and that work done entitles you to claim on society's productive output — is under genuine strain. If the majority of cognitive work is performed by machines within a generation, and those machines are owned by a small number of corporations whose shareholders are concentrated in a small number of countries, then the mechanism by which ordinary people in New Zealand, the UK, or Australia participate in and contribute to their own societies is broken in a way that has no historical precedent.
-
-Previous technological transitions created new categories of work. Huntley's observation — and it is an observation, not a certainty — is that this transition is different because AI threatens cognitive labour across the spectrum, leaving no obvious "higher rung" to climb to. The question of whether this is correct, or whether new work categories will emerge as they did after previous disruptions, is genuinely unresolved. Anyone claiming certainty in either direction is overstepping the evidence.
-
-What can be said with confidence is that the timeline for policy response is short. A government that acts in 2026 can frame AI policy as forward-looking. A government that acts in 2029 is responding to a crisis. The difference in policy quality between those two scenarios is not marginal — it is the difference between designing a system and triaging its failures.
-
-The political talent and will to do this exists, in principle. Whether it arrives before the disruption is visible enough to have already triggered the populist response that makes good policy impossible — that is the open question this essay cannot resolve.
-
----
+_Regards, Max._
 
 ## Further Reading
 
-- Huntley, G. (2026). _Software development now costs less than minimum wage._ https://ghuntley.com/real/
-- Huntley, G. (2026). _AI as economic warfare._ https://ghuntley.com/warfare/
-- Huntley, G. (2025). _Everything is a loop now._ https://ghuntley.com/loop/
-- Lex Fridman Podcast #494 with Jensen Huang. https://lexfridman.com/jensen-huang-transcript
-- The Pragmatic Engineer: Steve Yegge on IDEs and AI agents. https://newsletter.pragmaticengineer.com/p/from-ides-to-ai-agents-with-steve
-- The Pragmatic Engineer: Boris Cherny on building Claude Code. https://newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny
-- TechCrunch: Cursor admits Composer 2 built on Moonshot AI's Kimi. https://techcrunch.com/2026/03/22/cursor-admits-its-new-coding-model-was-built-on-top-of-moonshot-ais-kimi/
-- Sutton, R. (2019). _The Bitter Lesson._ http://www.incompleteideas.net/IncIdeas/BitterLesson.html
-- Stevenson, G. _Gray Economics_ — thesis on wealth inequality and asset price inflation.
+The economic argument behind these notes is in the companion essays:
+
+- [The New Contract — When Tokens Replace Labour](the_new_contract.html)
+- [The Price of Everything, The Value of Nothing](ai-economics-essay.html)
+
+Here's the closing section with the resources presented as a list:
+
+## Where to Next?
+
+The best move from here is to use it. You don't need to master everything at once — pick the thread that matches where you are and pull on it. The intuition only comes from doing.
+
+- **[Latent Patterns](https://latentpatterns.com)** — Deep technical education on the fundimential concepts of AI agents under the hood built by the inventor of the AI loop now. Courses, a glossary, and a newsletter, learning AI from first principles.
+- **[Ralph Playbook](https://github.com/ghuntley/how-to-ralph-wiggum)** — A community-authored, open guide to the AI development methodology that walks you through specs, planning loops, and autonomous building. Start here if you want to run your first agent loop today.
+- **[awesome-ralph](https://github.com/snwfdhmp/awesome-ralph)** — A curated collection of tools, prompts, and patterns that have grown up around the technique. Useful once you've got the basics and want to see how others are extending it.
+- **[awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps)** — A curated collection of LLM apps built with RAG, AI agents, multi-agent teams, MCP, and voice agents GitHub — practical examples you can learn from and run locally.
+- **[The Pragmatic Engineer]()** — An insider look at Big Tech and startups, AI engineering and coding, engineering developments, and case studies Jotform from the people actually shipping the systems.
+
+## References
+
+- Huntley — Real [ghuntley.com/real](https://ghuntley.com/real/)
+- Huntley — Loop [ghuntley.com/loop](https://ghuntley.com/loop/)
+- Jensen Huang / Lex Fridman — [Podcast #494](https://lexfridman.com/jensen-huang-transcript)
+- The Pragmatic Engineer — [Steve Yegge](https://newsletter.pragmaticengineer.com/p/from-ides-to-ai-agents-with-steve) · [Boris Cherny](https://newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny)
 
 ---
 
-_Max is a software engineer writing from Central Otago, New Zealand. He has no financial interest in any of the companies mentioned. If any of this has been hard to sit with: that's normal. Reach out. The best thing you can do is tap the next person on the shoulder when you're ready._
+_See also: [Everything Is a Loop Now](./AGENT_LOOP.md) · [What To Do Next](./NEXT_STEPS.md)_
+
+[← Back to README](../README.md)
