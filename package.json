@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@prisma/client": "^5.22.0",
+    "animejs": "^4.3.6",
     "next": "14.2.29",
     "next-auth": "^4.24.11",
     "react": "^18",
