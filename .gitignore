@@ -57,3 +57,10 @@ tests/.auth/*.json
 
 # Beads / Dolt files (added by bd init)
 .beads-credential-key
+
+# Choo Choo Ralph (install via /choo-choo-ralph:install)
+ralph.sh
+ralph-once.sh
+ralph-format.sh
+.beads/formulas/
+.choo-choo-ralph/
