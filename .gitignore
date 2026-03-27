@@ -54,3 +54,6 @@ tests/.auth/*.json
 
 # Docker Compose bind-mounted Postgres data (see docker-compose.yml)
 .docker/volumes/
+
+# Beads / Dolt files (added by bd init)
+.beads-credential-key
