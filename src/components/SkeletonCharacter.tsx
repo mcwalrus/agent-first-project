@@ -265,7 +265,7 @@ export default function SkeletonCharacter() {
           {/* Foot */}
           <ellipse cx="138" cy="473" rx="16" ry="7" fill="#F0EDE8" />
         </g>
-        <g id="head" ref={headRef}>
+        <g id="head" ref={headRef} style={{ transformOrigin: "100px 120px" }}>
           <g id="skull">
             {/* Main cranium */}
             <ellipse cx="100" cy="65" rx="42" ry="45" fill="#F0EDE8" />
