@@ -168,8 +168,55 @@ export default function SkeletonCharacter() {
           {/* Wrist */}
           <ellipse cx="162" cy="258" rx="6" ry="5" fill="#f0f0f0" />
         </g>
-        <g id="left-leg" />
-        <g id="right-leg" />
+        <g id="left-leg">
+          {/* Hip joint */}
+          <ellipse cx="78" cy="310" rx="9" ry="8" fill="#f0f0f0" />
+          {/* Femur (upper leg) */}
+          <ellipse cx="74" cy="350" rx="6" ry="40" fill="#f5f5f5" transform="rotate(-5, 74, 350)" />
+          {/* Knee joint */}
+          <ellipse cx="71" cy="392" rx="9" ry="7" fill="#f0f0f0" />
+          {/* Tibia (lower leg) */}
+          <ellipse
+            cx="70"
+            cy="428"
+            rx="4.5"
+            ry="34"
+            fill="#f5f5f5"
+            transform="rotate(-3, 70, 428)"
+          />
+          {/* Ankle */}
+          <ellipse cx="69" cy="463" rx="7" ry="5" fill="#f0f0f0" />
+          {/* Foot */}
+          <ellipse cx="62" cy="473" rx="16" ry="7" fill="#f5f5f5" />
+        </g>
+        <g id="right-leg">
+          {/* Hip joint */}
+          <ellipse cx="122" cy="310" rx="9" ry="8" fill="#f0f0f0" />
+          {/* Femur (upper leg) */}
+          <ellipse
+            cx="126"
+            cy="350"
+            rx="6"
+            ry="40"
+            fill="#f5f5f5"
+            transform="rotate(5, 126, 350)"
+          />
+          {/* Knee joint */}
+          <ellipse cx="129" cy="392" rx="9" ry="7" fill="#f0f0f0" />
+          {/* Tibia (lower leg) */}
+          <ellipse
+            cx="130"
+            cy="428"
+            rx="4.5"
+            ry="34"
+            fill="#f5f5f5"
+            transform="rotate(3, 130, 428)"
+          />
+          {/* Ankle */}
+          <ellipse cx="131" cy="463" rx="7" ry="5" fill="#f0f0f0" />
+          {/* Foot */}
+          <ellipse cx="138" cy="473" rx="16" ry="7" fill="#f5f5f5" />
+        </g>
         <g id="head">
           <g id="skull">
             {/* Main cranium */}
