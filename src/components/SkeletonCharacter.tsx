@@ -116,8 +116,58 @@ export default function SkeletonCharacter() {
           {/* Right iliac wing */}
           <ellipse cx="138" cy="272" rx="16" ry="10" fill="#f0f0f0" />
         </g>
-        <g id="left-arm" />
-        <g id="right-arm" />
+        <g id="left-arm">
+          {/* Shoulder joint */}
+          <ellipse cx="62" cy="132" rx="8" ry="7" fill="#f0f0f0" />
+          {/* Upper arm (humerus) */}
+          <ellipse
+            cx="55"
+            cy="166"
+            rx="5"
+            ry="35"
+            fill="#f5f5f5"
+            transform="rotate(-11.6, 55, 166)"
+          />
+          {/* Elbow joint */}
+          <ellipse cx="48" cy="200" rx="7" ry="6" fill="#f0f0f0" />
+          {/* Forearm */}
+          <ellipse
+            cx="43"
+            cy="229"
+            rx="4"
+            ry="30"
+            fill="#f5f5f5"
+            transform="rotate(-9.8, 43, 229)"
+          />
+          {/* Wrist */}
+          <ellipse cx="38" cy="258" rx="6" ry="5" fill="#f0f0f0" />
+        </g>
+        <g id="right-arm">
+          {/* Shoulder joint */}
+          <ellipse cx="138" cy="132" rx="8" ry="7" fill="#f0f0f0" />
+          {/* Upper arm (humerus) */}
+          <ellipse
+            cx="145"
+            cy="166"
+            rx="5"
+            ry="35"
+            fill="#f5f5f5"
+            transform="rotate(11.6, 145, 166)"
+          />
+          {/* Elbow joint */}
+          <ellipse cx="152" cy="200" rx="7" ry="6" fill="#f0f0f0" />
+          {/* Forearm */}
+          <ellipse
+            cx="157"
+            cy="229"
+            rx="4"
+            ry="30"
+            fill="#f5f5f5"
+            transform="rotate(9.8, 157, 229)"
+          />
+          {/* Wrist */}
+          <ellipse cx="162" cy="258" rx="6" ry="5" fill="#f0f0f0" />
+        </g>
         <g id="left-leg" />
         <g id="right-leg" />
         <g id="head">
