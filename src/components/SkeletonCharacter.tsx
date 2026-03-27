@@ -1,9 +1,26 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { animate } from "animejs";
 
 export default function SkeletonCharacter() {
+  const headRef = useRef<SVGGElement>(null);
+  const headAngleRef = useRef<number>(0);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!headRef.current) return;
+      const rect = headRef.current.getBoundingClientRect();
+      const headCenterX = rect.left + rect.width / 2;
+      const headCenterY = rect.top + rect.height / 2;
+      const angle = Math.atan2(e.clientY - headCenterY, e.clientX - headCenterX) * (180 / Math.PI);
+      headAngleRef.current = Math.max(-30, Math.min(30, angle));
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
   useEffect(() => {
     animate("#body", {
       translateY: [0, -6],
@@ -248,7 +265,7 @@ export default function SkeletonCharacter() {
           {/* Foot */}
           <ellipse cx="138" cy="473" rx="16" ry="7" fill="#F0EDE8" />
         </g>
-        <g id="head">
+        <g id="head" ref={headRef}>
           <g id="skull">
             {/* Main cranium */}
             <ellipse cx="100" cy="65" rx="42" ry="45" fill="#F0EDE8" />
