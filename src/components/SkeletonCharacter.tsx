@@ -26,31 +26,39 @@ export default function SkeletonCharacter() {
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      headTweenRef.current?.cancel();
+    };
   }, []);
 
   useEffect(() => {
-    animate("#body", {
+    const bodyAnim = animate("#body", {
       translateY: [0, -6],
       duration: 2400,
       ease: "inOutSine",
       alternate: true,
       loop: true,
     });
-    animate("#ribcage", {
+    const ribcageAnim = animate("#ribcage", {
       scaleY: [1, 1.04],
       duration: 2400,
       ease: "inOutSine",
       alternate: true,
       loop: true,
     });
-    animate("#jaw", {
+    const jawAnim = animate("#jaw", {
       rotate: [0, 2],
       duration: 2400,
       ease: "inOutSine",
       alternate: true,
       loop: true,
     });
+    return () => {
+      bodyAnim.cancel();
+      ribcageAnim.cancel();
+      jawAnim.cancel();
+    };
   }, []);
   return (
     <svg viewBox="0 0 200 500" width="100%" aria-label="Skeleton character">
