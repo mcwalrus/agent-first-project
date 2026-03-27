@@ -12,6 +12,13 @@ export default function SkeletonCharacter() {
       alternate: true,
       loop: true,
     });
+    animate("#ribcage", {
+      scaleY: [1, 1.04],
+      duration: 2400,
+      ease: "inOutSine",
+      alternate: true,
+      loop: true,
+    });
   }, []);
   return (
     <svg viewBox="0 0 200 500" width="100%" aria-label="Skeleton character">
