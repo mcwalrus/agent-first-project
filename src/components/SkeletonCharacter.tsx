@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { animate } from "animejs";
+import { animate, type JSAnimation } from "animejs";
 
 export default function SkeletonCharacter() {
   const headRef = useRef<SVGGElement>(null);
   const headAngleRef = useRef<number>(0);
+  const headTweenRef = useRef<JSAnimation | null>(null);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -14,7 +15,14 @@ export default function SkeletonCharacter() {
       const headCenterX = rect.left + rect.width / 2;
       const headCenterY = rect.top + rect.height / 2;
       const angle = Math.atan2(e.clientY - headCenterY, e.clientX - headCenterX) * (180 / Math.PI);
-      headAngleRef.current = Math.max(-30, Math.min(30, angle));
+      const clampedAngle = Math.max(-30, Math.min(30, angle));
+      headAngleRef.current = clampedAngle;
+      headTweenRef.current?.cancel();
+      headTweenRef.current = animate("#head", {
+        rotate: clampedAngle,
+        duration: 300,
+        ease: "outQuad",
+      });
     };
 
     window.addEventListener("mousemove", handleMouseMove);
