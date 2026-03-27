@@ -1,6 +1,18 @@
 "use client";
 
+import { useEffect } from "react";
+import { animate } from "animejs";
+
 export default function SkeletonCharacter() {
+  useEffect(() => {
+    animate("#body", {
+      translateY: [0, -6],
+      duration: 2400,
+      ease: "inOutSine",
+      alternate: true,
+      loop: true,
+    });
+  }, []);
   return (
     <svg viewBox="0 0 200 500" width="100%" aria-label="Skeleton character">
       <g id="body">
