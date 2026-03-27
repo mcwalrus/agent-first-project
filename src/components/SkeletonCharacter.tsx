@@ -106,7 +106,16 @@ export default function SkeletonCharacter() {
             strokeLinecap="round"
           />
         </g>
-        <g id="pelvis" />
+        <g id="pelvis">
+          {/* Main pelvis bowl (iliac crest) */}
+          <ellipse cx="100" cy="278" rx="46" ry="18" fill="#f0f0f0" />
+          {/* Pubic symphysis / lower pelvis */}
+          <ellipse cx="100" cy="300" rx="28" ry="12" fill="#f5f5f5" />
+          {/* Left iliac wing */}
+          <ellipse cx="62" cy="272" rx="16" ry="10" fill="#f0f0f0" />
+          {/* Right iliac wing */}
+          <ellipse cx="138" cy="272" rx="16" ry="10" fill="#f0f0f0" />
+        </g>
         <g id="left-arm" />
         <g id="right-arm" />
         <g id="left-leg" />
