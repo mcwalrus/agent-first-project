@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { appDisplayName } from "@/lib/app-metadata";
 import { authOptions } from "@/lib/auth";
+import SkeletonCharacter from "@/src/components/SkeletonCharacter";
 
 export default async function HomePage() {
   const session = await getServerSession(authOptions);
@@ -41,7 +42,9 @@ export default async function HomePage() {
           Health check: <Link href="/api/health">/api/health</Link>
         </p>
       </div>
-      <div className="min-h-screen bg-transparent" />
+      <div className="flex min-h-screen items-end">
+        <SkeletonCharacter />
+      </div>
     </main>
   );
 }
