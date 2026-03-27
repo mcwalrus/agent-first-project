@@ -1,5 +1,7 @@
 # Introduction
 
+_New to this material? Start with [New to Software](./NEW_TO_SOFTWARE.md) or the [Glossary](./GLOSSARY.md)._
+
 Geoffrey Huntley is known as the original founder of the technique for putting agents into a loop.
 
 To quote Huntley:
@@ -33,6 +35,6 @@ _Next (Practical): [Getting Started](./GETTING_STARTED.md)_
 
 _Next (Technical): [Understanding Your Backpressure](./BACKPRESSURE.md)_
 
-_See also: [Setup Claude Code](./CLAUDE_SETUP.md)_
+_See also: [New to Software](./NEW_TO_SOFTWARE.md) · [Glossary](./GLOSSARY.md) · [Setup Claude Code](./CLAUDE_SETUP.md)_
 
 [← Back to README](../README.md)

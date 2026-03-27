@@ -1,5 +1,7 @@
 # Getting Started
 
+_New to this material? [New to Software](./NEW_TO_SOFTWARE.md) · [Glossary](./GLOSSARY.md)._
+
 ## Prerequisites
 
 - MacOS
@@ -68,6 +70,6 @@ _Next (Practical): [Setup Claude Code](./CLAUDE_SETUP.md)_
 
 _Next (Technical): [Understanding Your Backpressure](./BACKPRESSURE.md)_
 
-_See also: [Introduction](./INTRO.md)_
+_See also: [New to Software](./NEW_TO_SOFTWARE.md) · [Glossary](./GLOSSARY.md) · [Introduction](./INTRO.md)_
 
 [← Back to README](../README.md)
