@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+if command -v bd >/dev/null 2>&1; then
+  bd hooks run post-checkout "$@" || exit $?
+fi
