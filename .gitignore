@@ -7,6 +7,8 @@
 .yarn/install-state.gz
 .claude/worktrees
 update-git.sh
+prepare
+tmp
 
 # testing
 /coverage
